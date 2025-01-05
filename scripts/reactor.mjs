@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/explicit-function-return-type */
 /**
  * Project Reactor
  * This script handles different execution modes (--dev, --build, --start)

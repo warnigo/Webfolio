@@ -45,6 +45,8 @@ const eslintConfig = [
   },
   ...fixupConfigRules(
     ...compat.extends(
+      "next",
+      "eslint:recommended",
       "next/core-web-vitals",
       "next/typescript",
       "plugin:react-hooks/recommended",
@@ -90,8 +92,9 @@ const eslintConfig = [
         ecmaFeatures: {
           jsx: true,
         },
+        sourceType: "module",
+        tsconfigRootDir: __dirname,
         project: "./tsconfig.json",
-        tsconfigRootDir: ".",
       },
     },
 
@@ -238,6 +241,15 @@ const eslintConfig = [
           varsIgnorePattern: "^_",
           caughtErrorsIgnorePattern: "^_",
           destructuredArrayIgnorePattern: "^_",
+        },
+      ],
+      "@typescript-eslint/explicit-function-return-type": [
+        "error",
+        {
+          allowExpressions: true,
+          allowTypedFunctionExpressions: true,
+          allowHigherOrderFunctions: true,
+          allowDirectConstAssertionInArrowFunctions: true,
         },
       ],
       "arrow-body-style": ["error", "as-needed"],
@@ -411,20 +423,6 @@ const eslintConfig = [
       "security/detect-possible-timing-attacks": "error",
       "security/detect-pseudoRandomBytes": "error",
       "security/detect-unsafe-regex": "error",
-    },
-  },
-  {
-    files: ["*.ts", "*.tsx"],
-    rules: {
-      "@typescript-eslint/explicit-function-return-type": [
-        "error",
-        {
-          allowExpressions: true,
-          allowTypedFunctionExpressions: true,
-          allowHigherOrderFunctions: true,
-          allowDirectConstAssertionInArrowFunctions: true,
-        },
-      ],
     },
   },
 ]
