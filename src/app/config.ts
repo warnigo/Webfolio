@@ -1,6 +1,6 @@
-import { type Metadata } from "next"
+import { type Metadata, type Viewport } from "next"
 
-export const rootMetadata: Metadata = {
+export const metadata: Metadata = {
   title: {
     template: "%s | Abubakir Shavkatov (Warnigo)",
     default: "Abubakir Shavkatov (Warnigo) | Software Engineer & Web Developer",
@@ -8,6 +8,7 @@ export const rootMetadata: Metadata = {
   description:
     "Welcome to the digital realm of Abubakir Shavkatov, also known as Warnigo. Professional software engineer and creative developer combining technical expertise with artistic vision. Explore my innovative projects, creative works, and technical achievements.",
   keywords: [
+    // English keywords
     "Abubakir Shavkatov",
     "Abubakir",
     "Warnigo",
@@ -23,8 +24,32 @@ export const rootMetadata: Metadata = {
     "Next.js Developer",
     "Golang Developer",
     "Nest.js Developer",
+    // Russian keywords
+    "Абубакир Шавкатов",
+    "Абубакир",
+    "веб-разработчик",
+    "фронтенд разработчик",
+    "программист",
+    "разработчик",
+    "инженер-программист",
+    "фуллстек разработчик",
+    "React разработчик",
+    "JavaScript разработчик",
+    // Uzbek keywords
+    "Abubakir Shavkatov",
+    "dasturchi",
+    "veb dasturchi",
+    "frontend dasturchi",
+    "dastur ishlab chiquvchi",
+    "React dasturchi",
+    "JavaScript dasturchi",
+    "fullstack dasturchi",
   ],
-  authors: [{ name: "Abubakir Shavkatov" }, { name: "Warnigo" }],
+  authors: [
+    { name: "Abubakir Shavkatov" },
+    { name: "Абубакир Шавкатов" },
+    { name: "Warnigo" },
+  ],
   creator: "Abubakir Shavkatov (Warnigo)",
   publisher: "Abubakir Shavkatov",
   robots: {
@@ -71,15 +96,35 @@ export const rootMetadata: Metadata = {
   },
   alternates: {
     canonical: "https://warnigo.uz",
+    languages: {
+      "en-US": "https://warnigo.uz/en",
+      "ru-RU": "https://warnigo.uz/ru",
+      "uz-UZ": "https://warnigo.uz/uz",
+    },
   },
   other: {
-    name: "Abubakir Shavkatov",
+    name: ["Abubakir Shavkatov", "Абубакир Шавкатов", "Abubakir Shavkatov"],
     alternateName: "Warnigo Warfurious",
     knowsAbout: [
+      // English
       "Frontend Engineer",
       "Software Development",
       "Web Development",
       "Creative Coding",
+      // Russian
+      "Фронтенд разработка",
+      "Разработка программного обеспечения",
+      "Веб-разработка",
+      // Uzbek
+      "Frontend dasturlash",
+      "Dasturiy ta'minot ishlab chiqish",
+      "Veb dasturlash",
     ],
   },
+}
+
+export const viewport: Viewport = {
+  initialScale: 1,
+  userScalable: false,
+  width: "device-width",
 }

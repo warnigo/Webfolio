@@ -4,9 +4,7 @@ import { getLocale } from "next-intl/server"
 import { GeistMono } from "geist/font/mono"
 import { GeistSans } from "geist/font/sans"
 
-export { metadata, viewport } from "./config"
-
-const RootLayout: FC<PropsWithChildren> = async ({ children }) => {
+export const RootLayout: FC<PropsWithChildren> = async ({ children }) => {
   const locale = await getLocale()
 
   return (
@@ -21,4 +19,3 @@ const RootLayout: FC<PropsWithChildren> = async ({ children }) => {
 }
 
 RootLayout.displayName = "RootLayout"
-export default RootLayout
