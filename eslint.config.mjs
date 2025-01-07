@@ -1,4 +1,8 @@
-import { fixupConfigRules, fixupPluginRules } from "@eslint/compat"
+import {
+  fixupConfigRules,
+  fixupPluginRules,
+  includeIgnoreFile,
+} from "@eslint/compat"
 import { FlatCompat } from "@eslint/eslintrc"
 import js from "@eslint/js"
 import typescriptEslint from "@typescript-eslint/eslint-plugin"
@@ -15,11 +19,12 @@ import simpleImportSort from "eslint-plugin-simple-import-sort"
 import tailwindcss from "eslint-plugin-tailwindcss"
 import unusedImport from "eslint-plugin-unused-imports"
 import globals from "globals"
-import { dirname } from "path"
+import { dirname, resolve } from "path"
 import { fileURLToPath } from "url"
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = dirname(__filename)
+const gitIgnoreFile = resolve(__dirname, ".gitignore")
 
 const compat = new FlatCompat({
   baseDirectory: __dirname,
@@ -35,18 +40,12 @@ const twOptions = {
 const eslintConfig = [
   {
     files: ["**/*.{js,jsx,ts,tsx,mjs}"],
-    ignores: [
-      "**/node_modules/**",
-      "**/dist/**",
-      "**/build/**",
-      "**/.next/**",
-      "**/public/**",
-    ],
   },
+  includeIgnoreFile(gitIgnoreFile),
   ...fixupConfigRules(
-    ...compat.extends(
-      "next",
+    compat.extends(
       "eslint:recommended",
+      "next",
       "next/core-web-vitals",
       "next/typescript",
       "plugin:react-hooks/recommended",
@@ -315,6 +314,12 @@ const eslintConfig = [
       ],
       "simple-import-sort/exports": "error",
       "import/first": "error",
+      "import/no-unresolved": [
+        "error",
+        {
+          ignore: ["^geist/font"],
+        },
+      ],
       "import/newline-after-import": [
         "error",
         {
