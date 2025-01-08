@@ -1,24 +1,13 @@
 import { getRequestConfig } from "next-intl/server"
 
 import { DEFAULT_LOCALE, LOCALES } from "./config/constants"
-import { getLocale, setLocale } from "./lib/cookies"
 import { type Locales } from "./model/types"
 
-export default getRequestConfig(async ({ locale: requestLocale }) => {
-  let locale: Locales
+export default getRequestConfig(async ({ requestLocale }) => {
+  let locale: Locales | string
+  locale = (await requestLocale) ?? DEFAULT_LOCALE
 
-  try {
-    locale = await getLocale()
-    if (requestLocale && requestLocale !== locale) {
-      await setLocale(requestLocale as Locales)
-      locale = requestLocale as Locales
-    }
-  } catch (error) {
-    console.error("Error getting locale:", error)
-    locale = (requestLocale as Locales) || DEFAULT_LOCALE
-  }
-
-  if (!LOCALES.includes(locale)) {
+  if (!LOCALES.includes(locale as Locales)) {
     locale = DEFAULT_LOCALE
   }
 
