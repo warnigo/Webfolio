@@ -11,12 +11,12 @@ const Header: FC = () => {
       <div className="flex items-center justify-between">
         <Badge
           withDot
-          className="rounded-full border py-3 pr-5 font-mono text-sm"
-          dotClassName="size-2 border border-green-600 mx-3"
+          className="rounded-full border-border py-2 pr-4 font-mono text-sm"
+          dotClassName="size-2 border border-green-600 mx-2"
           dotColor="bg-green-500"
           variant="secondary"
         >
-          {t("availableWork")}
+          <p className="select-none">{t("availableWork")}</p>
         </Badge>
 
         <LocalTime />

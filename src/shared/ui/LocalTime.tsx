@@ -1,30 +1,33 @@
 "use client"
 
 import { type FC, useEffect, useState } from "react"
-import { useTranslations } from "next-intl"
+import { useNow, useTranslations } from "next-intl"
 
 import dayjs from "dayjs"
+import timezone from "dayjs/plugin/timezone"
+import utc from "dayjs/plugin/utc"
 import { AnimatePresence } from "framer-motion"
 
+import { DEFAULT_TIMEZONE } from "../i18n/request"
 import { RotateNumber } from "../motion-ui"
 
 import { Badge } from "./Badge"
 
+dayjs.extend(utc)
+dayjs.extend(timezone)
+
 export const LocalTime: FC = () => {
   const t = useTranslations("Layout")
-  const [time, setTime] = useState<string>("")
+  const now = useNow({
+    updateInterval: 1000,
+  })
   const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
-    setTime(dayjs().format("HH:mm:ss"))
     setIsLoading(false)
-
-    const interval = setInterval(() => {
-      setTime(dayjs().format("HH:mm:ss"))
-    }, 1000)
-
-    return () => clearInterval(interval)
   }, [])
+
+  const formattedTime = dayjs(now).tz(DEFAULT_TIMEZONE).format("HH:mm:ss")
 
   if (isLoading) {
     return (
@@ -32,7 +35,6 @@ export const LocalTime: FC = () => {
         <p className="select-none font-mono text-sm font-medium text-primary-foreground">
           {t("localeTime")}
         </p>
-
         <Badge
           className="select-none border-border px-4 py-2 font-mono text-sm"
           variant="secondary"
@@ -48,14 +50,13 @@ export const LocalTime: FC = () => {
       <p className="animate-fade-in select-none font-mono text-sm font-medium text-primary-foreground">
         {t("localeTime")}
       </p>
-
       <Badge
-        className="group relative select-none overflow-hidden border-border px-4 py-2 font-mono text-sm"
+        className="group relative select-none overflow-hidden rounded-xl border-border px-4 py-2 font-mono text-sm"
         variant="secondary"
       >
         <div className="relative flex">
           <AnimatePresence mode="popLayout">
-            {time.split("").map((char, index) => (
+            {formattedTime.split("").map((char, index) => (
               <div key={`${index}-${char}`} style={{ height: "1.5em" }}>
                 {char === ":" ? <span>:</span> : <RotateNumber number={char} />}
               </div>

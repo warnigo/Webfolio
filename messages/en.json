@@ -3,6 +3,8 @@
   "Layout": {
     "availableWork": "Available For Work",
     "notAvailableWork": "Not Available For Work",
-    "localeTime": "Local Time"
+    "localeTime": "Local Time",
+    "avatarAlt": "Abubakir Shavkatov",
+    "avatarFallback": "Abubakir Shavkatov"
   }
 }

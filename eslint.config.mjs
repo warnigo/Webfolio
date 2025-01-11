@@ -242,6 +242,7 @@ const eslintConfig = [
           destructuredArrayIgnorePattern: "^_",
         },
       ],
+      "@typescript-eslint/no-unsafe-function-type": "off",
       "@typescript-eslint/explicit-function-return-type": [
         "error",
         {
