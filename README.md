@@ -1,36 +1,57 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+<div align="center">
+  <h1><samp>Webfolio</samp></h1>
+  <samp>Showcasing my coding skills and projects with a sleek, modern design.<br /> Built using the latest web technologies to demonstrate my expertise and creativity</samp>
+</div>
 
-## Getting Started
+## Stack technologies
 
-First, run the development server:
+- [React](https://react.dev/learn) + [Typescript](https://www.typescriptlang.org/docs/)
+- [Zustand](https://docs.pmnd.rs/zustand/getting-started/introduction) - Small, fast, and scalable bearbones state management solution
+- [Shadcn UI](https://ui.shadcn.com) - As ready-made UI components
+- [React Hook Form](https://react-hook-form.com/) - Performant, flexible and extensible forms with
+- [React Query](https://tanstack.com/query) - Automatically caches data from your queries, reducing the need for redundant network requests and improving application performance.
+- [Tailwindcss](https://tailwindcss.com) - For styles
+- [Nextjs](https://Nextjs.org/) - framework for SSR
+
+> [!IMPORTANT]
+> This code structure was created using FSD (Feature-Sliced Design). Please read the FSD documentation before making any changes. Tailwind CSS and shadcn-ui are used for UI components. Define any CSS units such as px, rem, etc., in globals.css. React Query is used for API integration.
+
+## Basic requirements for the project
+
+> [!NOTE]
+> Version Node +v20\*
+
+## For Developers
 
 ```bash
+npm install
+# and
 npm run dev
 # or
-yarn dev
-# or
+pnpm install
+# and
 pnpm dev
 # or
-bun dev
+yarn install
+# and
+yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Run the project at [localhost:3000](http://localhost:3000)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+> [!NOTE]
+> You need to create .env.development following the example of .env.example so that all parameters are
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Code Review
 
-## Learn More
+    1) If the code is not ready, then mark your PR as “Draft” with the “Mark as draft” button
+    2) Considers Architectural, Structural and other agreements on the design of PR to be critical and for this is not passed further than PR
+    3) The remaining comments are purely advisory in nature and are not a blocker for PR
+    4) Any controversial issue is discussed by the team and if there is no violation of points 1-2, then this dispute is not blocked!
 
-To learn more about Next.js, take a look at the following resources:
+## ☝️ - IMPORTANT:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+> - To type everything and anything that is possible is not to use ANY!
+> - any enemy! - always discuss exceptions with the team!
+> - avoid console.log if possible, in extreme cases console.error console.warn
+> - mutate values ​​outside the mobx store (use exclusively actions from the mobx store for such things.)
