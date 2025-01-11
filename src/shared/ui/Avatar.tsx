@@ -1,6 +1,7 @@
 "use client"
 
 import { type FC, useState } from "react"
+import Image from "next/image"
 
 type AvatarProps = {
   src?: string
@@ -59,10 +60,17 @@ export const Avatar: FC<AvatarProps> = ({
     <div className="relative inline-block">
       <div className={classes}>
         {src && !imageError ? (
-          <img
+          <Image
+            priority
             alt={alt}
+            blurDataURL="/avatar.webp"
             className="size-full object-cover"
+            draggable={false}
+            height={56}
+            placeholder="blur"
+            sizes="(max-width: 640px) 100vw, 33vw"
             src={src}
+            width={56}
             onError={() => setImageError(true)}
           />
         ) : (

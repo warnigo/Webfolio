@@ -19,7 +19,9 @@ const Header: FC = () => {
           <p className="select-none">{t("availableWork")}</p>
         </Badge>
 
-        <LocalTime />
+        <div className="hidden lg:block">
+          <LocalTime />
+        </div>
       </div>
     </header>
   )
