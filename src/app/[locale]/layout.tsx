@@ -11,9 +11,9 @@ const LocaleLayout: FC<Props> = async ({ children, params }) => {
   const { locale } = await params
 
   return (
-    <Layout>
-      <NextIntlProvider locale={locale}>{children}</NextIntlProvider>
-    </Layout>
+    <NextIntlProvider locale={locale}>
+      <Layout>{children}</Layout>
+    </NextIntlProvider>
   )
 }
 export default LocaleLayout

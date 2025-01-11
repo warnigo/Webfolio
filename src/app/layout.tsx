@@ -1,7 +1,6 @@
 import { type FC, type PropsWithChildren } from "react"
 import { getLocale } from "next-intl/server"
 
-import { cn } from "@shared/lib"
 import { GeistMono } from "geist/font/mono"
 import { GeistSans } from "geist/font/sans"
 
@@ -18,9 +17,7 @@ const RootLayout: FC<PropsWithChildren> = async ({ children }) => {
       className={`${GeistSans.variable} ${GeistMono.variable}`}
       lang={locale}
     >
-      <body className={cn("bg-background text-foreground antialiased")}>
-        {children}
-      </body>
+      <body className="antialiased">{children}</body>
     </html>
   )
 }

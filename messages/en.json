@@ -1,6 +1,8 @@
 {
-  "Common": {
-    "ItsMe": "It's me",
-    "Instagram": "Instagram"
+  "Common": {},
+  "Layout": {
+    "availableWork": "Available For Work",
+    "notAvailableWork": "Not Available For Work",
+    "localeTime": "Local Time"
   }
 }

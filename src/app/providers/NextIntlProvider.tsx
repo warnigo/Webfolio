@@ -22,3 +22,5 @@ export const NextIntlProvider: FC<Props> = async ({ children, locale }) => {
     </NextIntlClientProvider>
   )
 }
+
+NextIntlProvider.displayName = "NextIntlProvider"
