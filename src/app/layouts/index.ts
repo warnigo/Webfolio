@@ -1,2 +1,1 @@
-export { BaseLayout } from "./BaseLayout"
-export { RootLayout } from "./RootLayout"
+export { Layout } from "./Layout"

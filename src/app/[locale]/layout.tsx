@@ -1,9 +1,7 @@
 import { type FC, type PropsWithChildren } from "react"
-import { notFound } from "next/navigation"
-import { NextIntlClientProvider } from "next-intl"
-import { getMessages } from "next-intl/server"
 
-import { type Locales, routing } from "@shared/i18n"
+import { Layout } from "@app/layouts"
+import { NextIntlProvider } from "@app/providers"
 
 interface Props extends PropsWithChildren {
   params: Promise<{ locale: string }>
@@ -11,16 +9,11 @@ interface Props extends PropsWithChildren {
 
 const LocaleLayout: FC<Props> = async ({ children, params }) => {
   const { locale } = await params
-  const messages = await getMessages()
-
-  if (!routing.locales.includes(locale as Locales)) {
-    notFound()
-  }
 
   return (
-    <NextIntlClientProvider messages={messages}>
-      {children}
-    </NextIntlClientProvider>
+    <Layout>
+      <NextIntlProvider locale={locale}>{children}</NextIntlProvider>
+    </Layout>
   )
 }
 export default LocaleLayout
