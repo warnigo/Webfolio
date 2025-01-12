@@ -35,6 +35,7 @@ const compat = new FlatCompat({
 const twOptions = {
   callees: ["clsx", "cva", "cn"],
   classRegex: "^class(Name)?$",
+  config: "./tailwind.config.ts",
 }
 
 const eslintConfig = [

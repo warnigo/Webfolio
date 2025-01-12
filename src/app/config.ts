@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   },
   description:
     "Welcome to the digital realm of Abubakir Shavkatov, also known as Warnigo. Professional software engineer and creative developer combining technical expertise with artistic vision. Explore my innovative projects, creative works, and technical achievements.",
+  icons: "./icon.svg",
   keywords: [
     // English keywords
     "Abubakir Shavkatov",

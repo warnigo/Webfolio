@@ -3,6 +3,8 @@
 import { type FC, useEffect, useState } from "react"
 import { useNow, useTranslations } from "next-intl"
 
+import { cn } from "@/shared/lib"
+
 import dayjs from "dayjs"
 import timezone from "dayjs/plugin/timezone"
 import utc from "dayjs/plugin/utc"
@@ -16,7 +18,11 @@ import { Badge } from "./Badge"
 dayjs.extend(utc)
 dayjs.extend(timezone)
 
-export const LocalTime: FC = () => {
+type Props = {
+  className: string
+}
+
+export const LocalTime: FC<Props> = ({ className }) => {
   const t = useTranslations("Layout")
   const now = useNow({
     updateInterval: 1000,
@@ -31,39 +37,43 @@ export const LocalTime: FC = () => {
 
   if (isLoading) {
     return (
-      <div className="flex animate-pulse items-center gap-2">
-        <p className="select-none font-mono text-sm font-medium text-primary-foreground">
+      <div className={cn("flex animate-pulse items-center gap-2", className)}>
+        <p className="select-none font-mono text-sm font-medium text-foreground">
           {t("localeTime")}
         </p>
         <Badge
-          className="select-none border-border px-4 py-2 font-mono text-sm"
+          className="select-none border-border px-4 py-2 font-mono text-sm hover:bg-secondary"
           variant="secondary"
         >
-          00:00:00
+          <time>00:00:00</time>
         </Badge>
       </div>
     )
   }
 
   return (
-    <div className="flex flex-col items-center gap-2 transition-opacity duration-300 hover:opacity-80 sm:flex-row">
-      <p className="animate-fade-in select-none font-mono text-sm font-medium text-primary-foreground">
+    <div
+      className={cn(
+        "flex flex-col items-center gap-2 transition-opacity duration-300 sm:flex-row",
+        className,
+      )}
+    >
+      <p className="animate-fade-in select-none font-mono text-sm font-medium text-highlight">
         {t("localeTime")}
       </p>
       <Badge
-        className="group relative select-none overflow-hidden rounded-xl border-border px-4 py-2 font-mono text-sm"
+        className="group relative select-none overflow-hidden rounded-xl border-border px-4 py-2 font-mono text-sm hover:bg-secondary"
         variant="secondary"
       >
         <div className="relative flex">
           <AnimatePresence mode="popLayout">
             {formattedTime.split("").map((char, index) => (
-              <div key={`${index}-${char}`} style={{ height: "1.5em" }}>
+              <time key={`${index}-${char}`} style={{ height: "1.5em" }}>
                 {char === ":" ? <span>:</span> : <RotateNumber number={char} />}
-              </div>
+              </time>
             ))}
           </AnimatePresence>
         </div>
-        <div className="absolute inset-0 bg-primary/5 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
       </Badge>
     </div>
   )

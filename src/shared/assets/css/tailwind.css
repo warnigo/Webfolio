@@ -14,7 +14,7 @@
     --popover-foreground: 0 0% 98%;
 
     --primary: 0 0% 100%;
-    --primary-foreground: 0 0% 60%;
+    --primary-foreground: 0 0% 2%;
 
     --secondary: 240 2% 8%;
     --secondary-foreground: 0 0% 98%;
@@ -27,6 +27,9 @@
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
+
+    --highlight: 0 0% 60%;
+    --highlight-foreground: 0 0% 30%;
 
     --border: 240 2% 13%;
     --input: 240 3.7% 15.9%;
@@ -42,117 +45,5 @@
 
   body {
     @apply bg-background text-foreground;
-  }
-}
-
-/* Reset styles */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  border: 0;
-  vertical-align: baseline;
-  border-style: solid;
-}
-
-/* HTML5 display-role reset for older browsers */
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-menu,
-nav,
-section {
-  display: block;
-}
-
-body {
-  @apply bg-background text-foreground antialiased;
-  line-height: 1.5;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-ol,
-ul {
-  list-style: none;
-}
-
-blockquote,
-q {
-  quotes: none;
-}
-
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-
-img,
-picture,
-video,
-canvas,
-svg {
-  display: block;
-  max-width: 100%;
-}
-
-input,
-button,
-textarea,
-select {
-  font: inherit;
-}
-
-p,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  overflow-wrap: break-word;
-}
-
-/* Smooth scrolling va scroll behavior */
-html {
-  scroll-behavior: smooth;
-}
-
-/* Custom scrollbar */
-::-webkit-scrollbar {
-  width: 8px;
-}
-
-::-webkit-scrollbar-track {
-  @apply bg-secondary;
-}
-
-::-webkit-scrollbar-thumb {
-  @apply rounded-full bg-primary/60;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  @apply bg-primary/80;
-}
-
-/* Utility classes */
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
-
-  .text-gradient {
-    @apply bg-gradient-to-r from-primary to-accent-foreground bg-clip-text text-transparent;
-  }
-
-  .animated-underline {
-    @apply relative after:absolute after:-bottom-1 after:left-0 after:h-0.5 after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full;
   }
 }

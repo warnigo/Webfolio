@@ -1,10 +1,15 @@
 {
-  "Common": {},
+  "Common": {
+    "me": "Abubakir Shavkatov",
+    "download": "Download"
+  },
   "Layout": {
+    "home": "Home",
+    "experience": "Experience",
+    "contact": "Contact",
+    "resume": "My Resume",
     "availableWork": "Available For Work",
     "notAvailableWork": "Not Available For Work",
-    "localeTime": "Local Time",
-    "avatarAlt": "Abubakir Shavkatov",
-    "avatarFallback": "Abubakir Shavkatov"
+    "localeTime": "Local Time"
   }
 }

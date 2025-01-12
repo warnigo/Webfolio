@@ -9,8 +9,5 @@
   "quoteProps": "consistent",
   "arrowParens": "always",
   "bracketSpacing": true,
-  "bracketSameLine": false,
-  "plugins": [
-    "prettier-plugin-tailwindcss"
-  ]
+  "bracketSameLine": false
 }
