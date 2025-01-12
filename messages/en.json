@@ -10,6 +10,11 @@
     "resume": "My Resume",
     "availableWork": "Available For Work",
     "notAvailableWork": "Not Available For Work",
-    "localeTime": "Local Time"
+    "localeTime": "Local Time",
+    "sourceCode": "Source Code"
+  },
+  "BetaBanner": {
+    "title": "This site is currently in beta. Features may not be fully available.",
+    "close": "Close banner"
   }
 }
