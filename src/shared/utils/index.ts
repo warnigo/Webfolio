@@ -1,0 +1,1 @@
+export { getStripLocale } from "./stripLocale"

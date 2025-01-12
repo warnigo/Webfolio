@@ -1,0 +1,15 @@
+{
+  "Common": {
+    "me": "Abubakir Shavkatov",
+    "download": "Download"
+  },
+  "Layout": {
+    "home": "Home",
+    "experience": "Experience",
+    "contact": "Contact",
+    "resume": "My Resume",
+    "availableWork": "Available For Work",
+    "notAvailableWork": "Not Available For Work",
+    "localeTime": "Local Time"
+  }
+}
