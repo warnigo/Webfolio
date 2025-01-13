@@ -1,16 +1,14 @@
-import { ROUTES } from "@/shared/config"
-
-export const menuItems = [
+export const languages = [
   {
-    label: "home",
-    href: ROUTES.home,
+    name: "En",
+    code: "en",
   },
   {
-    label: "experience",
-    href: ROUTES.experience,
+    name: "Ru",
+    code: "ru",
   },
   {
-    label: "contact",
-    href: ROUTES.contact,
+    name: "Uz",
+    code: "uz",
   },
 ]

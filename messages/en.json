@@ -1,13 +1,18 @@
 {
   "Common": {
     "me": "Abubakir Shavkatov",
-    "download": "Download"
+    "warnigo": "Warnigo",
+    "download": "Download",
+    "visitBlog": "Visit My Blog Site",
+    "go": "Go",
+    "thanksForVisit": "Thanks for visiting!"
   },
   "Layout": {
     "home": "Home",
     "experience": "Experience",
     "contact": "Contact",
     "resume": "My Resume",
+    "notFoundPage": "Not Found page",
     "availableWork": "Available For Work",
     "notAvailableWork": "Not Available For Work",
     "localeTime": "Local Time",
@@ -16,5 +21,8 @@
   "BetaBanner": {
     "title": "This site is currently in beta. Features may not be fully available.",
     "close": "Close banner"
+  },
+  "Resume": {
+    "resumeDownload": "Resume Download"
   }
 }

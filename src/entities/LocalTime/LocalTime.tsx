@@ -5,15 +5,13 @@ import { useNow, useTranslations } from "next-intl"
 
 import { cn } from "@/shared/lib"
 
+import { DEFAULT_TIMEZONE } from "@shared/i18n/request"
+import { RotateNumber } from "@shared/motion-ui"
+import { Badge } from "@shared/ui"
 import dayjs from "dayjs"
 import timezone from "dayjs/plugin/timezone"
 import utc from "dayjs/plugin/utc"
 import { AnimatePresence } from "framer-motion"
-
-import { DEFAULT_TIMEZONE } from "../i18n/request"
-import { RotateNumber } from "../motion-ui"
-
-import { Badge } from "./Badge"
 
 dayjs.extend(utc)
 dayjs.extend(timezone)
@@ -42,7 +40,7 @@ export const LocalTime: FC<Props> = ({ className }) => {
           {t("localeTime")}
         </p>
         <Badge
-          className="select-none border-border px-4 py-2 font-mono text-sm hover:bg-secondary"
+          className="select-none rounded-xl border-border px-4 py-2 font-mono text-sm hover:bg-secondary"
           variant="secondary"
         >
           <time>00:00:00</time>
@@ -61,8 +59,9 @@ export const LocalTime: FC<Props> = ({ className }) => {
       <p className="animate-fade-in select-none font-mono text-sm font-medium text-highlight">
         {t("localeTime")}
       </p>
+
       <Badge
-        className="group relative select-none overflow-hidden rounded-xl border-border px-4 py-2 font-mono text-sm hover:bg-secondary"
+        className="group relative h-full min-h-10 select-none overflow-hidden rounded-xl border-border px-4 py-2 font-mono text-sm hover:bg-secondary"
         variant="secondary"
       >
         <div className="relative flex">
