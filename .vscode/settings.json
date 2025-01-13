@@ -28,6 +28,7 @@
   },
 
   "editor.formatOnPaste": false,
+  "explorer.confirmDelete": true,
   "editor.formatOnSaveMode": "modifications",
   "eslint.quiet": true
 }

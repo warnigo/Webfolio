@@ -181,7 +181,7 @@ export const MotionButton: FC<MotionButtonProps> = ({
           transition={{
             duration: 0.7,
             ease: "easeInOut",
-            repeat: Infinity,
+            repeat: 1,
             repeatDelay: 0.5,
           }}
         >

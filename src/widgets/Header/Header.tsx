@@ -1,31 +1,40 @@
 "use client"
 
 import { type FC } from "react"
-import { useTranslations } from "next-intl"
+import { useLocale, useTranslations } from "next-intl"
 
-import { ROUTES } from "@/shared/config"
-import { Link, usePathname } from "@/shared/i18n"
+import { LocalTime } from "@/entities/LocalTime"
+import { menuItems } from "@/shared/config"
+import { Link, usePathname, useRouter } from "@/shared/i18n"
 import { cn } from "@/shared/lib"
 import { MotionButton } from "@/shared/motion-ui"
+import { DropdownMenu, Logo } from "@/shared/ui"
 
-import { LocalTime } from "@shared/ui"
-import { CloudDownload } from "lucide-react"
+import { motion } from "framer-motion"
+import { Languages } from "lucide-react"
 
-import { menuItems } from "./model/constants"
+import { languages } from "./model/constants"
 
 const Header: FC = () => {
   const t = useTranslations()
   const pathname = usePathname()
+  const locale = useLocale()
+  const router = useRouter()
+
+  const handleLanguageChange = (newLocale: string): void => {
+    router.push(pathname, { locale: newLocale })
+  }
+
+  const languageItems = languages.map((lang) => ({
+    label: lang.name,
+    onClick: () => handleLanguageChange(lang.code),
+    active: locale === lang.code,
+  }))
 
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-background/80 backdrop-blur-sm">
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
-        <Link
-          className="font-mono text-2xl font-black transition-colors hover:text-primary"
-          href={ROUTES.home}
-        >
-          {t("Common.me")}
-        </Link>
+        <Logo className="flex min-h-10 items-center justify-center text-2xl" />
 
         <nav className="hidden md:block">
           <ul className="flex items-center space-x-6">
@@ -48,11 +57,19 @@ const Header: FC = () => {
         </nav>
 
         <div className="flex items-center space-x-4">
-          <LocalTime className="hidden shrink-0 text-sm text-muted-foreground lg:flex" />
+          <LocalTime className="hidden lg:flex" />
 
-          <MotionButton className="rounded-xl" hoverIcon={<CloudDownload />}>
-            <Link href={ROUTES.resume}>{t("Layout.resume")}</Link>
-          </MotionButton>
+          <DropdownMenu align="right" items={languageItems}>
+            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+              <MotionButton
+                className="h-full min-h-10 rounded-xl font-mono text-sm"
+                hoverIcon={<Languages />}
+                variant="outline"
+              >
+                {languages.find((l) => l.code === locale)?.name}
+              </MotionButton>
+            </motion.div>
+          </DropdownMenu>
         </div>
       </div>
     </header>
