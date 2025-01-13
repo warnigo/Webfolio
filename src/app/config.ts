@@ -2,12 +2,12 @@ import { type Metadata, type Viewport } from "next"
 
 export const metadata: Metadata = {
   title: {
-    template: "%s | Abubakir Shavkatov (Warnigo)",
-    default: "Abubakir Shavkatov (Warnigo) | Software Engineer & Web Developer",
+    template: "%s | Abubakir Shavkatov",
+    default: "Abubakir Shavkatov | Software Engineer & Web Developer",
   },
   description:
     "Welcome to the digital realm of Abubakir Shavkatov, also known as Warnigo. Professional software engineer and creative developer combining technical expertise with artistic vision. Explore my innovative projects, creative works, and technical achievements.",
-  icons: "./icon.svg",
+  icons: "https://warnigo.uz/avatar.webp",
   keywords: [
     // English keywords
     "Abubakir Shavkatov",
@@ -68,13 +68,12 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "https://warnigo.uz",
-    siteName: "Abubakir Shavkatov | Warnigo",
     title: "Abubakir Shavkatov | Software Engineer & Web Developer",
     description:
       "Discover the work of Abubakir Shavkatov (Warnigo) - Where technical innovation meets creative vision. Explore my portfolio of web development, creative coding, and digital art.",
     images: [
       {
-        url: "",
+        url: "https://warnigo.uz/avatar.webp",
         width: 1200,
         height: 630,
         alt: "Abubakir Shavkatov - Warnigo - Software Engineer",
@@ -105,7 +104,7 @@ export const metadata: Metadata = {
   },
   other: {
     name: ["Abubakir Shavkatov", "Абубакир Шавкатов", "Abubakir Shavkatov"],
-    alternateName: "Warnigo Warfurious",
+    alternateName: "Warnigo",
     knowsAbout: [
       // English
       "Frontend Engineer",
