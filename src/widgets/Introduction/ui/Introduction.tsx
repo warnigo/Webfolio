@@ -17,7 +17,7 @@ const Introduction: FC = () => {
   return (
     <motion.section
       animate={{ opacity: 1 }}
-      className="container relative mx-auto grid min-h-[calc(100vh-5rem)] grid-cols-1 items-center gap-8 lg:grid-cols-2"
+      className="relative grid min-h-[calc(100vh-101px)] grid-cols-1 items-center gap-8 lg:grid-cols-2"
       initial={{ opacity: 0 }}
     >
       <div className="max-w-3xl space-y-8">
