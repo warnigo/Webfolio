@@ -20,7 +20,7 @@ const Footer: FC = () => {
 
   return (
     <footer className="mt-auto w-full border-t  border-border bg-background">
-      <div className="container mx-auto flex flex-col items-center gap-3 py-10">
+      <div className="container mx-auto flex flex-col items-center gap-5 py-5">
         <div className="flex w-full items-center justify-between">
           <Logo
             className="flex items-center justify-center"
@@ -34,7 +34,7 @@ const Footer: FC = () => {
                   <Link
                     href={href}
                     className={cn(
-                      "font-mono text-sm font-medium text-muted-foreground transition-colors hover:text-primary",
+                      "font-mono text-sm font-medium text-muted-foreground transition-colors duration-300 hover:text-primary",
                       { "text-primary": pathname === href },
                     )}
                   >
@@ -61,7 +61,7 @@ const Footer: FC = () => {
 
         <div className="flex w-full items-center justify-between">
           <Link
-            className="font-mono text-base font-semibold text-highlight hover:text-primary active:text-primary/80"
+            className="font-mono text-base font-semibold text-highlight duration-500 hover:text-primary active:text-primary/80"
             href={ENV.buymeacoffee_url}
             target="_blank"
           >
@@ -74,7 +74,7 @@ const Footer: FC = () => {
                 <li key={label}>
                   <Link href={href} target="_blank">
                     <Icon
-                      className="fill-highlight stroke-none text-highlight hover:fill-primary hover:text-primary"
+                      className="fill-highlight stroke-none text-highlight duration-500 hover:fill-primary hover:text-primary"
                       path={icon_path}
                       size={24}
                     />
@@ -85,7 +85,7 @@ const Footer: FC = () => {
           </nav>
 
           <motion.a
-            className="group relative flex items-center gap-2 text-highlight transition-colors hover:text-primary"
+            className="group relative flex items-center gap-2 text-highlight transition-colors duration-500 hover:text-primary"
             href={ENV.repo_url}
             target="_blank"
             transition={{ type: "spring", stiffness: 300, damping: 20 }}
