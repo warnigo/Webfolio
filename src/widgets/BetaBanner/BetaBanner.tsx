@@ -1,16 +1,12 @@
 "use client"
 
-import { type FC, useState } from "react"
+import { type FC } from "react"
 import { useTranslations } from "next-intl"
 
 import { AnimatePresence, motion } from "framer-motion"
-import { X } from "lucide-react"
 
 const BetaBanner: FC = () => {
   const t = useTranslations("BetaBanner")
-  const [isVisible, setIsVisible] = useState(true)
-
-  if (!isVisible) return null
 
   return (
     <AnimatePresence>
@@ -22,13 +18,6 @@ const BetaBanner: FC = () => {
         transition={{ type: "spring", stiffness: 300, damping: 30 }}
       >
         <p>{t("title")}</p>
-        <button
-          aria-label={t("close")}
-          className="absolute right-2 top-1/2 -translate-y-1/2 text-white hover:text-gray-200 focus:outline-none"
-          onClick={() => setIsVisible(false)}
-        >
-          <X size={18} />
-        </button>
       </motion.div>
     </AnimatePresence>
   )
