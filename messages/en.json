@@ -22,6 +22,10 @@
     "title": "This site is currently in beta. Features may not be fully available.",
     "close": "Close banner"
   },
+  "Introduction": {
+    "shortAboutMe": "Half of my life has been spent talking to machines, shaping the digital world through code. I’m passionate about designing robust architectures and solving intricate problems, from scaling systems to building powerful algorithms. I love taking on complex projects that push boundaries, creating seamless solutions that evolve and adapt.",
+    "occupation": "Frontend Engineer - Software Engineer"
+  },
   "Resume": {
     "resumeDownload": "Resume Download"
   }

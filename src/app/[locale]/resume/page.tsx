@@ -7,5 +7,4 @@ export const metadata: Metadata = resumePageMetadata
 
 const ResumePage: FC = () => <Resume />
 
-ResumePage.displayName = "ResumePage"
 export default ResumePage

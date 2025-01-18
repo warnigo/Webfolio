@@ -1,2 +1,2 @@
-export { default as Home } from "./Home"
-export { homePageMetadata } from "./metadata"
+export { homePageMetadata } from "./config/metadata"
+export { default as Home } from "./ui/Home"
