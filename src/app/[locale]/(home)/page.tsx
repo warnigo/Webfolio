@@ -7,5 +7,4 @@ export const metadata: Metadata = homePageMetadata
 
 const HomePage: FC = () => <Home />
 
-HomePage.displayName = "HomePage"
 export default HomePage

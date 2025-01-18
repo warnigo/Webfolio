@@ -1,6 +1,32 @@
 {
   "Common": {
-    "ItsMe": "Bu men",
-    "Instagram": "Instagram"
+    "me": "Abubakir Shavkatov",
+    "warnigo": "Warnigo",
+    "download": "Yuklab olish",
+    "visitBlog": "Mening blogimga tashrif buyuring",
+    "go": "O'tish",
+    "thanksForVisit": "Tashrif buyurganingiz uchun rahmat!"
+  },
+  "Layout": {
+    "home": "Bosh sahifa",
+    "experience": "Tajribam",
+    "contact": "Aloqa",
+    "resume": "Rezyume",
+    "notFoundPage": "Sahifa topilmadi",
+    "availableWork": "Ishga tayyorman",
+    "notAvailableWork": "Ishga tayyor emasman",
+    "localeTime": "Mahalliy vaqt",
+    "sourceCode": "Manba kodi"
+  },
+  "BetaBanner": {
+    "title": "Ushbu sayt hozirda beta versiyasida. Ba'zi funksiyalar to'liq mavjud bo'lmasligi mumkin.",
+    "close": "Bannerni yopish"
+  },
+  "Introduction": {
+    "shortAboutMe": "Hayotimning yarmidan ko'pi kompyuterlar bilan muloqotda o'tdi, raqamli dunyoni kod orqali shakllantirganman. Kuchli arxitekturalarni loyihalash va murakkab muammolarni hal qilishni yaxshi ko'raman, tizimlarni kengaytirishdan tortib, kuchli algoritmlar yaratishga qadar. Chegaralarni kengaytiradigan murakkab loyihalarni amalga oshirishni, mukammal va moslashuvchan echimlar yaratishni yaxshi ko'raman.",
+    "occupation": "Frontend injener - Dasturiy ta'minot injeneri"
+  },
+  "Resume": {
+    "resumeDownload": "Rezyume yuklab olish"
   }
 }

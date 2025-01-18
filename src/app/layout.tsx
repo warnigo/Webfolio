@@ -5,7 +5,7 @@ import { GeistMono } from "geist/font/mono"
 import { GeistSans } from "geist/font/sans"
 
 import "@shared/assets/css/tailwind.css"
-import "./globals.css"
+import "./styles/globals.css"
 
 export { metadata, viewport } from "./config"
 

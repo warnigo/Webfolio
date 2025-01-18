@@ -43,10 +43,8 @@ const Header: FC = () => {
                 <Link
                   href={href}
                   className={cn(
-                    "font-mono text-sm font-medium text-muted-foreground transition-colors hover:text-primary",
-                    {
-                      "text-primary": pathname === href,
-                    },
+                    "font-mono text-sm font-medium text-muted-foreground transition-colors duration-300 hover:text-primary",
+                    { "text-primary": pathname === href },
                   )}
                 >
                   {t(`Layout.${label}`)}
