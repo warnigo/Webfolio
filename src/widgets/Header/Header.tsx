@@ -33,7 +33,7 @@ const Header: FC = () => {
 
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-background/80 backdrop-blur-sm">
-      <div className="container mx-auto flex h-16 items-center justify-between px-4">
+      <div className="container mx-auto flex h-16 items-center justify-between">
         <Logo className="flex min-h-10 items-center justify-center text-2xl" />
 
         <nav className="hidden md:block">
