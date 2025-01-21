@@ -5,6 +5,7 @@ import {
   type ElementType,
   type FC,
   type ReactElement,
+  type ReactNode,
   useState,
 } from "react"
 
@@ -43,6 +44,8 @@ interface MotionButtonProps
     VariantProps<typeof buttonVariants> {
   asChild?: boolean
   as?: ElementType
+  icon?: ReactElement
+  iconPosition?: "left" | "right"
   hoverText?: string
   hoverIcon?: ReactElement
   motionConfig?: MotionConfig
@@ -54,6 +57,8 @@ export const MotionButton: FC<MotionButtonProps> = ({
   size,
   asChild = false,
   as: Component = "button",
+  icon,
+  iconPosition = "left",
   hoverText,
   hoverIcon,
   children,
@@ -110,6 +115,30 @@ export const MotionButton: FC<MotionButtonProps> = ({
     },
   }
 
+  const renderContent = (): ReactNode => {
+    const contentElements = []
+
+    if (icon && iconPosition === "left") {
+      contentElements.push(
+        <span key="icon-left" className="mr-2">
+          {icon}
+        </span>,
+      )
+    }
+
+    contentElements.push(<span key="text">{children}</span>)
+
+    if (icon && iconPosition === "right") {
+      contentElements.push(
+        <span key="icon-right" className="ml-2">
+          {icon}
+        </span>,
+      )
+    }
+
+    return contentElements
+  }
+
   return (
     <ButtonComponent
       disabled={disabled}
@@ -149,12 +178,12 @@ export const MotionButton: FC<MotionButtonProps> = ({
       >
         <motion.span
           animate={shouldAnimate && isHovered ? "hover" : "initial"}
-          className="relative z-10"
+          className="relative z-10 flex items-center"
           initial="initial"
           style={{ backfaceVisibility: "hidden" }}
           variants={getTextVariants}
         >
-          {children}
+          {renderContent()}
         </motion.span>
 
         {shouldAnimate && (hoverText || hoverIcon) ? (

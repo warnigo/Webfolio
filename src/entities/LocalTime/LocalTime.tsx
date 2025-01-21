@@ -17,7 +17,7 @@ dayjs.extend(utc)
 dayjs.extend(timezone)
 
 type Props = {
-  className: string
+  className?: string
 }
 
 export const LocalTime: FC<Props> = ({ className }) => {
@@ -35,10 +35,14 @@ export const LocalTime: FC<Props> = ({ className }) => {
 
   if (isLoading) {
     return (
-      <div className={cn("flex animate-pulse items-center gap-2", className)}>
+      <div
+        aria-label={t("localeTime")}
+        className={cn("flex animate-pulse items-center gap-2", className)}
+      >
         <p className="select-none font-mono text-sm font-medium text-foreground">
           {t("localeTime")}
         </p>
+
         <Badge
           className="select-none rounded-xl border-border px-4 py-2 font-mono text-sm hover:bg-secondary"
           variant="secondary"
@@ -52,7 +56,7 @@ export const LocalTime: FC<Props> = ({ className }) => {
   return (
     <div
       className={cn(
-        "flex flex-col items-center gap-2 transition-opacity duration-300 sm:flex-row",
+        "flex items-center gap-2 transition-opacity duration-300",
         className,
       )}
     >
