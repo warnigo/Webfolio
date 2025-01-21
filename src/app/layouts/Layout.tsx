@@ -8,7 +8,9 @@ export const Layout: FC<PropsWithChildren> = ({ children }) => (
   <div className="flex min-h-screen flex-col">
     <BetaBanner />
     <Header />
-    <main className="grow">{children}</main>
+    <main className="grow" id="main-content">
+      {children}
+    </main>
     <Footer />
   </div>
 )

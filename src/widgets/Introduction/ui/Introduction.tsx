@@ -97,14 +97,14 @@ const Introduction: FC = () => {
         >
           <MotionButton
             aria-label={t("Common.aboutMe")}
-            className="min-h-10 w-32 rounded-xl"
+            className="min-h-10 rounded-xl"
             hoverIcon={<User />}
           >
             {t("Common.aboutMe")}
           </MotionButton>
           <MotionButton
             aria-label={t("Common.contactMe")}
-            className="min-h-10 w-32 rounded-xl"
+            className="min-h-10 rounded-xl"
             hoverIcon={<UtilityPole />}
             variant="outline"
           >
@@ -124,7 +124,7 @@ const Introduction: FC = () => {
             <Image
               priority
               alt={t("Introduction.profileImageAlt")}
-              className="h-full  max-h-[400px] rounded-2xl"
+              className="h-full  max-h-[400px] rounded-2xl object-cover"
               height={400}
               sizes="(max-width: 768px) 100vw, 400px"
               src="/me.webp"

@@ -15,6 +15,7 @@ export const Logo: FC<Props> = ({ className, title }) => {
 
   return (
     <Link
+      aria-label={t("me")}
       href={ROUTES.home}
       className={cn(
         "min-h-10 font-mono text-2xl font-black transition-colors hover:text-primary",
