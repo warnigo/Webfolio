@@ -55,12 +55,7 @@ const Header: FC = () => {
         <nav className="hidden md:block">
           <ul className="flex items-center space-x-6">
             {menuItems.map(({ label, href }) => (
-              <motion.li
-                key={label}
-                aria-label={t(`Layout.${label}`)}
-                variants={linkHoverVariants}
-                whileHover="hover"
-              >
+              <li key={label} aria-label={t(`Layout.${label}`)}>
                 <Link
                   href={href}
                   className={cn(
@@ -70,7 +65,7 @@ const Header: FC = () => {
                 >
                   {t(`Layout.${label}`)}
                 </Link>
-              </motion.li>
+              </li>
             ))}
           </ul>
         </nav>
