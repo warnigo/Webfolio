@@ -17,8 +17,9 @@ export const textHoverVariants: Variants = {
   hover: { x: -5 },
 }
 
-export const containerVariants: Variants = {
+export const containerVariants = {
   hidden: { opacity: 0, scale: 0.9 },
+  viewport: { once: true, amount: 0.2 },
   visible: {
     opacity: 1,
     scale: 1,

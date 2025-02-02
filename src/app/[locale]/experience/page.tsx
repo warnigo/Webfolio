@@ -1,10 +1,10 @@
 import { type FC } from "react"
-import { type Metadata } from "next"
 
-import { Experience, experiencePageMetadata } from "@/views/experience"
+import { Experience } from "@/views/experience"
 
-export const metadata: Metadata = experiencePageMetadata
+export { metadata } from "@views/experience"
 
 const ExperiencePage: FC = () => <Experience />
 
+ExperiencePage.displayName = "ExperiencePage"
 export default ExperiencePage

@@ -14,7 +14,7 @@ const asciiBanner = `
  ╚══╝╚══╝ ╚══════╝╚═════╝ ╚═╝      ╚═════╝ ╚══════╝╚═╝ ╚═════╝
 `
 
-const args = process.argv.slice(2) // Get command line arguments after "node reactor.mjs"
+const args = process.argv.slice(2)
 
 /**
  * Displays a stylized status message in the console based on the mode.

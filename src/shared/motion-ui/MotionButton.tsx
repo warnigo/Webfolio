@@ -11,9 +11,10 @@ import {
 
 import { buttonVariants } from "@/shared/ui"
 
-import { cn } from "@shared/lib"
 import { type VariantProps } from "class-variance-authority"
 import { motion } from "framer-motion"
+
+import { cn } from "@shared/lib"
 
 interface MotionConfig {
   duration?: number

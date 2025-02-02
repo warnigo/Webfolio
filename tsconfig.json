@@ -25,6 +25,7 @@
       "@views/*": ["./src/views/*"],
       "@shared/*": ["./src/shared/*"],
       "@helpers/*": ["./src/helpers/*"],
+      "@entities/*": ["./src/entities/*"],
       "@features/*": ["./src/features/*"],
       "@widgets/*": ["./src/widgets/*"],
       "~images/*": ["./public/images/*"]

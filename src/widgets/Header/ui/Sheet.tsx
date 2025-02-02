@@ -1,132 +1,98 @@
-"use client"
-
-import {
-  type FC,
-  type PropsWithChildren,
-  useEffect,
-  useRef,
-  useState,
-} from "react"
+import { type FC } from "react"
 import { useTranslations } from "next-intl"
 
-import { AnimatePresence, motion } from "framer-motion"
-import { X } from "lucide-react"
+import { LocalTime } from "@/entities/LocalTime"
+import { menuItems } from "@/shared/config"
+import { Link, usePathname } from "@/shared/i18n"
+import { cn } from "@/shared/lib"
+import { MotionButton } from "@/shared/motion-ui"
 
-type Props = {
-  isOpen: boolean
-  onClose: VoidFunction
+import { motion } from "framer-motion"
+import { Languages } from "lucide-react"
+
+import { Logo, Separator, Sheet as SheetComponent } from "@shared/ui"
+
+import { buttonHoverVariants, linkHoverVariants } from "../lib/motion"
+
+type SheetLanguages = {
+  label: string
+  onClick: () => void
+  active: boolean
 }
 
-export const Sheet: FC<PropsWithChildren<Props>> = ({
-  isOpen,
-  onClose,
-  children,
-}) => {
-  const [isMounted, setIsMounted] = useState(false)
-  const sheetRef = useRef<HTMLDivElement>(null)
+type Props = {
+  open: boolean
+  languages: SheetLanguages[]
+  setOpen: (open: boolean) => void
+}
+
+export const Sheet: FC<Props> = ({ open, setOpen, languages }) => {
   const t = useTranslations()
 
-  useEffect(() => {
-    setIsMounted(true)
-  }, [])
-
-  useEffect(() => {
-    const body = document.body
-    const mainContent = document.getElementById("main-content")
-    const footer = document.getElementById("footer")
-    const layoutElements = [mainContent, footer]
-
-    if (isOpen) {
-      body.style.overflow = "hidden"
-      layoutElements.forEach((element) => {
-        if (element) {
-          element.style.filter = "blur(8px)"
-          element.style.transition = "filter 0.3s ease-in-out"
-        }
-      })
-    } else {
-      body.style.overflow = "unset"
-      layoutElements.forEach((element) => {
-        if (element) {
-          element.style.filter = "none"
-        }
-      })
-    }
-
-    return () => {
-      body.style.overflow = "unset"
-      layoutElements.forEach((element) => {
-        if (element) {
-          element.style.filter = "none"
-        }
-      })
-    }
-  }, [isOpen])
-
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent): void => {
-      if (
-        sheetRef.current &&
-        !sheetRef.current.contains(event.target as Node)
-      ) {
-        onClose()
-      }
-    }
-
-    const handleFocusOut = (event: FocusEvent): void => {
-      if (!sheetRef.current?.contains(event.relatedTarget as Node)) {
-        onClose()
-      }
-    }
-
-    if (isOpen) {
-      document.addEventListener("mousedown", handleClickOutside)
-      document.addEventListener("focusin", handleFocusOut)
-    }
-
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside)
-      document.removeEventListener("focusin", handleFocusOut)
-    }
-  }, [isOpen, onClose])
-
-  if (!isMounted) {
-    return null
-  }
+  const pathname = usePathname()
 
   return (
-    <AnimatePresence>
-      {isOpen ? (
-        <>
-          <motion.div
-            animate={{ opacity: 1 }}
-            className="fixed inset-0 z-50 bg-background/80 backdrop-blur-sm"
-            exit={{ opacity: 0 }}
-            initial={{ opacity: 0 }}
-            transition={{ duration: 0.3 }}
-          />
+    <SheetComponent isOpen={open} onClose={() => setOpen(false)}>
+      <div className="flex h-full flex-col justify-between">
+        <div className="flex flex-col gap-3">
+          <Logo className="flex min-h-10 items-start justify-center border-b border-border pb-3 text-2xl" />
 
-          <motion.div
-            ref={sheetRef}
-            animate={{ x: 0 }}
-            className="fixed right-0 top-0 z-[60] h-screen w-3/4 max-w-sm overflow-y-auto border-l border-border bg-background p-6 shadow-lg"
-            exit={{ x: "100%" }}
-            id="sheet-content"
-            initial={{ x: "100%" }}
-            transition={{ type: "spring", damping: 30, stiffness: 300 }}
-          >
-            <button
-              className="absolute right-4 top-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
-              onClick={onClose}
-            >
-              <X className="size-6" />
-              <span className="sr-only">{t("Common.close")}</span>
-            </button>
+          <nav className="grow">
+            <ul className="space-y-4">
+              {menuItems.map(({ label, href }) => (
+                <motion.li
+                  key={label}
+                  variants={linkHoverVariants}
+                  whileHover="hover"
+                >
+                  <Link
+                    aria-label={t(`Layout.${label}`)}
+                    href={href}
+                    className={cn(
+                      "block font-mono text-lg font-medium text-muted-foreground transition-colors duration-300 hover:text-primary",
+                      { "text-primary": pathname === href },
+                    )}
+                    onClick={() => setOpen(false)}
+                  >
+                    {t(`Layout.${label}`)}
+                  </Link>
+                </motion.li>
+              ))}
+            </ul>
+          </nav>
 
-            <div className="relative z-50 h-full">{children}</div>
-          </motion.div>
-        </>
-      ) : null}
-    </AnimatePresence>
+          <Separator />
+
+          <div className="flex w-full items-center justify-between gap-3">
+            {languages.map(({ label, onClick, active }) => (
+              <motion.div
+                key={label}
+                className="w-full"
+                variants={buttonHoverVariants}
+                whileHover="hover"
+                whileTap="tap"
+              >
+                <MotionButton
+                  aria-label={label}
+                  hoverIcon={<Languages />}
+                  variant="outline"
+                  className={cn(
+                    "size-full min-h-10 rounded-xl font-mono text-sm",
+                    { "bg-accent": active },
+                  )}
+                  onClick={onClick}
+                >
+                  {label}
+                </MotionButton>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+
+        <div className="mb-6 flex items-center justify-end border-t border-border">
+          <LocalTime className="flex items-center pt-3" />
+        </div>
+      </div>
+    </SheetComponent>
   )
 }

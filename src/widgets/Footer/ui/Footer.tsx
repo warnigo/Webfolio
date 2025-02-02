@@ -3,14 +3,14 @@
 import { type FC } from "react"
 import { useTranslations } from "next-intl"
 
-import { ENV, socialMedia } from "@/shared/config"
-import { Link, usePathname } from "@/shared/i18n"
-import { cn } from "@/shared/lib"
-import { MotionButton } from "@/shared/motion-ui"
-import { Icon, Logo, Separator } from "@/shared/ui"
-
 import { motion } from "framer-motion"
 import { Milestone, MoveUpRight } from "lucide-react"
+
+import { ENV, socialMedia } from "@shared/config"
+import { Link, usePathname } from "@shared/i18n"
+import { cn } from "@shared/lib"
+import { MotionButton } from "@shared/motion-ui"
+import { Icon, Logo, Separator } from "@shared/ui"
 
 import {
   containerVariants,
@@ -20,6 +20,7 @@ import {
 } from "../lib/motion"
 import { footerMenu } from "../model/constants"
 
+// Footer component for layout
 const Footer: FC = () => {
   const t = useTranslations()
   const pathname = usePathname()
@@ -32,7 +33,7 @@ const Footer: FC = () => {
       initial="hidden"
       role="contentinfo"
       variants={containerVariants}
-      viewport={{ once: true, amount: 0.2 }}
+      viewport={containerVariants.viewport}
       whileInView="visible"
     >
       <div className="container mx-auto flex flex-col items-center gap-5 py-5">
@@ -44,8 +45,12 @@ const Footer: FC = () => {
             className="flex items-center justify-center md:items-center"
             title={t("Common.warnigo")}
           />
+
           <nav>
-            <ul className="flex w-full flex-col items-start justify-center gap-2 sm:flex-row sm:gap-6 md:items-center md:gap-3 lg:gap-6">
+            <ul
+              aria-label={t("Layout.footerNavigation")}
+              className="flex w-full flex-col items-start justify-center gap-2 sm:flex-row sm:gap-6 md:items-center md:gap-3 lg:gap-6"
+            >
               {footerMenu.map(({ label, href }) => (
                 <li key={label}>
                   <Link
@@ -63,7 +68,7 @@ const Footer: FC = () => {
             </ul>
           </nav>
 
-          <Link href="">
+          <Link href="/blog">
             <MotionButton
               aria-label={t("Common.visitBlog")}
               className="group min-h-10"

@@ -6,13 +6,15 @@ import { useTranslations } from "next-intl"
 
 import { MotionButton } from "@/shared/motion-ui"
 
-import { Separator } from "@shared/ui"
 import { AnimatePresence, motion } from "framer-motion"
 import { User, UtilityPole } from "lucide-react"
+
+import { Separator } from "@shared/ui"
 
 import { fadeInRight, fadeInUp, floatingShapes, handWave } from "../lib/motion"
 import { shapes } from "../model/constants"
 
+// Widget introduction for home page
 const Introduction: FC = () => {
   const t = useTranslations()
 

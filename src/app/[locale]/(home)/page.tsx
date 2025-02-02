@@ -1,9 +1,8 @@
 import { type FC } from "react"
-import { type Metadata } from "next"
 
-import { Home, homePageMetadata } from "@views/home"
+import { Home } from "@views/home"
 
-export const metadata: Metadata = homePageMetadata
+export { metadata } from "@views/home"
 
 const HomePage: FC = () => <Home />
 

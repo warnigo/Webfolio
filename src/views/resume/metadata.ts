@@ -1,6 +1,6 @@
 import { type Metadata } from "next"
 
-export const resumePageMetadata: Metadata = {
+export const metadata: Metadata = {
   title: "Resume",
   description: "Resume of Abubakir Shavkatov (Warnigo)",
 }

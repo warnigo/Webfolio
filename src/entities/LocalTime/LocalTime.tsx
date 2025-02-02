@@ -5,13 +5,14 @@ import { useNow, useTranslations } from "next-intl"
 
 import { cn } from "@/shared/lib"
 
-import { DEFAULT_TIMEZONE } from "@shared/i18n/request"
-import { RotateNumber } from "@shared/motion-ui"
-import { Badge } from "@shared/ui"
 import dayjs from "dayjs"
 import timezone from "dayjs/plugin/timezone"
 import utc from "dayjs/plugin/utc"
 import { AnimatePresence } from "framer-motion"
+
+import { DEFAULT_TIMEZONE } from "@shared/i18n/request"
+import { RotateNumber } from "@shared/motion-ui"
+import { Badge } from "@shared/ui"
 
 dayjs.extend(utc)
 dayjs.extend(timezone)
@@ -20,6 +21,10 @@ type Props = {
   className?: string
 }
 
+/**
+ * LocalTime component to display the current time in the specified timezone.
+ * It shows a loading state until the time is available, then displays the formatted time.
+ */
 export const LocalTime: FC<Props> = ({ className }) => {
   const t = useTranslations("Layout")
   const now = useNow({
@@ -55,6 +60,7 @@ export const LocalTime: FC<Props> = ({ className }) => {
 
   return (
     <div
+      aria-live="polite"
       className={cn(
         "flex items-center gap-2 transition-opacity duration-300",
         className,
@@ -71,7 +77,11 @@ export const LocalTime: FC<Props> = ({ className }) => {
         <div className="relative flex">
           <AnimatePresence mode="popLayout">
             {formattedTime.split("").map((char, index) => (
-              <time key={`${index}-${char}`} style={{ height: "1.5em" }}>
+              <time
+                key={`${index}-${char}`}
+                aria-live="assertive"
+                style={{ height: "1.5em" }}
+              >
                 {char === ":" ? <span>:</span> : <RotateNumber number={char} />}
               </time>
             ))}
