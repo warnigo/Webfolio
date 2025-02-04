@@ -3,3 +3,4 @@ export type {
   FCRequiredChildren,
   PropsChildrenRequired,
 } from "./children"
+export type { MotionViewportType } from "./motion"

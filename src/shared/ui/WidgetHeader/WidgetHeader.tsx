@@ -1,0 +1,89 @@
+import { type FC, type ReactElement } from "react"
+
+import { cn } from "@/shared/lib"
+import { type MotionViewportType } from "@/shared/types"
+
+import { motion } from "framer-motion"
+
+type Props = {
+  title: string
+  description?: string
+  icon: ReactElement
+  className?: string
+  viewport?: MotionViewportType
+}
+
+const variants = {
+  container: {
+    hidden: { opacity: 0, y: -10 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.5, ease: "easeOut" },
+    },
+  },
+  title: {
+    hidden: { opacity: 0, x: -10 },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: { duration: 0.4, ease: "easeOut", delay: 0.2 },
+    },
+  },
+  icon: {
+    hidden: { scale: 0.8, opacity: 0 },
+    visible: {
+      scale: 1,
+      opacity: 1,
+      transition: { duration: 0.3, ease: "easeOut", delay: 0.3 },
+    },
+  },
+  description: {
+    hidden: { opacity: 0, y: 5 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.4, ease: "easeOut", delay: 0.4 },
+    },
+  },
+}
+
+// WidgetHeader Component
+// A reusable header component with a title, an optional description, and an optional icon
+export const WidgetHeader: FC<Props> = ({
+  title,
+  description,
+  icon,
+  className,
+  viewport = { once: true, amount: 0.5 },
+}) => (
+  <motion.div
+    className={cn("flex grow flex-col items-start justify-start", className)}
+    initial="hidden"
+    variants={variants.container}
+    viewport={viewport}
+    whileInView="visible"
+  >
+    <motion.h4
+      className="flex items-center gap-2 font-mono text-4xl font-black"
+      variants={variants.title}
+    >
+      <motion.span aria-hidden="true" variants={variants.icon}>
+        {icon}
+      </motion.span>
+      {title}
+    </motion.h4>
+
+    {description ? (
+      <motion.p
+        className="text-base font-medium text-highlight"
+        role="note"
+        variants={variants.description}
+      >
+        {description}
+      </motion.p>
+    ) : null}
+  </motion.div>
+)
+
+WidgetHeader.displayName = "WidgetHeader"
