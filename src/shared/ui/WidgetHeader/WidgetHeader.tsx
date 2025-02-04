@@ -58,11 +58,14 @@ export const WidgetHeader: FC<Props> = ({
   viewport = { once: true, amount: 0.5 },
 }) => (
   <motion.div
-    className={cn("flex grow flex-col items-start justify-start", className)}
     initial="hidden"
     variants={variants.container}
     viewport={viewport}
     whileInView="visible"
+    className={cn(
+      "flex grow flex-col items-start justify-start gap-2",
+      className,
+    )}
   >
     <motion.h4
       className="flex items-center gap-2 font-mono text-4xl font-black"

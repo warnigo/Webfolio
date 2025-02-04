@@ -1,16 +1,26 @@
 import { type FC } from "react"
 import { useTranslations } from "next-intl"
 
-import { Form, FormField, TextField, WidgetHeader } from "@/shared/ui"
+import { MotionButton } from "@/shared/motion-ui"
+import {
+  Form,
+  FormField,
+  Separator,
+  TextAreaField,
+  TextField,
+  WidgetHeader,
+} from "@/shared/ui"
 
 import { zodResolver } from "@hookform/resolvers/zod"
-import { Construction } from "lucide-react"
+import { Construction, SendHorizontal } from "lucide-react"
 import { useForm } from "react-hook-form"
 
 import { formSchema } from "../model/schemas"
 
 type FormValues = {
   name: string
+  contact: string
+  message?: string
 }
 
 const Contact: FC = () => {
@@ -21,6 +31,8 @@ const Contact: FC = () => {
     resolver: zodResolver(formSchema),
     defaultValues: {
       name: "",
+      contact: "",
+      message: "",
     },
   })
 
@@ -29,17 +41,46 @@ const Contact: FC = () => {
   }
 
   return (
-    <section className="py-5">
+    <section className="grid gap-4 py-5">
       <WidgetHeader
         description={t("letsWorkTogetherDescription")}
         icon={<Construction size={30} strokeWidth={2.5} />}
         title={t("letsWorkTogether")}
       />
 
-      <Form methods={methods} onSubmit={methods.handleSubmit(handleSubmit)}>
-        <FormField label={t("name")}>
-          <TextField name="name" placeholder={t("yourName")} />
+      <Separator />
+
+      <Form
+        className="grid w-2/3 gap-4"
+        methods={methods}
+        onSubmit={methods.handleSubmit(handleSubmit)}
+      >
+        <div className="flex items-center justify-center gap-4">
+          <FormField label={t("name")}>
+            <TextField name="name" placeholder={t("yourName")} type="text" />
+          </FormField>
+
+          <FormField label={t("yourContact")}>
+            <TextField name="contact" placeholder={t("howContactYou")} />
+          </FormField>
+        </div>
+
+        <FormField label={t("message")}>
+          <TextAreaField
+            className="h-24 resize-none"
+            name="message"
+            placeholder={t("yourMessage")}
+          />
         </FormField>
+
+        <MotionButton
+          className="h-12 rounded-xl"
+          hoverIcon={<SendHorizontal />}
+          hoverText={t("send")}
+          variant="secondary"
+        >
+          {t("sendMessage")}
+        </MotionButton>
       </Form>
     </section>
   )

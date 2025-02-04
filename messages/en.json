@@ -45,6 +45,14 @@
     "letsWorkTogether": "Let's Work Together",
     "letsWorkTogetherDescription": "Looking for a creative and reliable professional? Let’s collaborate to bring your ideas to life. Contact me today to start your next project!",
     "name": "Name",
-    "yourName": "Your name"
+    "yourName": "Your name",
+    "yourContact": "Your Contact",
+    "howContactYou": "How do I contact you?",
+    "budget": "Budget",
+    "yourBudget": "Your Budget",
+    "message": "Message",
+    "yourMessage": "Your message to me",
+    "sendMessage": "Send Your Message",
+    "send": "Send"
   }
 }
