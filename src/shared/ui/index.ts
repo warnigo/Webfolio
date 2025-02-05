@@ -1,6 +1,7 @@
 export { Avatar } from "./Avatar"
 export { Badge } from "./Badge"
 export { Button, buttonVariants } from "./Button"
+export * from "./card"
 export { DropdownMenu } from "./DropdownMenu"
 export * from "./form"
 export { Icon, iconPaths } from "./icons"

@@ -1,16 +1,15 @@
 import { type FC } from "react"
 import { useTranslations } from "next-intl"
 
-import { LocalTime } from "@/entities/LocalTime"
-import { menuItems } from "@/shared/config"
-import { Link, usePathname } from "@/shared/i18n"
-import { cn } from "@/shared/lib"
-import { MotionButton } from "@/shared/motion-ui"
-
 import { motion } from "framer-motion"
 import { Languages } from "lucide-react"
 
+import { menuItems } from "@shared/config"
+import { Link, usePathname } from "@shared/i18n"
+import { cn } from "@shared/lib"
+import { MotionButton } from "@shared/motion-ui"
 import { Logo, Separator, Sheet as SheetComponent } from "@shared/ui"
+import { LocalTime } from "@entities/LocalTime"
 
 import { buttonHoverVariants, linkHoverVariants } from "../lib/motion"
 

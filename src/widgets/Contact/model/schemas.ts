@@ -1,9 +1,13 @@
+import { useTranslations } from "next-intl"
+
 import { z } from "zod"
 
-export const formSchema = z
-  .object({
-    name: z.string().min(2, "Nom kamida 2 belgidan iborat bo'lishi kerak"),
+export const useFormSchema = (): any => {
+  const t = useTranslations("Contact")
+
+  return z.object({
+    name: z.string().min(2, t("nameMinLength")),
+    contact: z.string().min(2, t("contactMinLength")),
+    message: z.string().min(2, t("messageMinLength")),
   })
-  .required({
-    name: true,
-  })
+}

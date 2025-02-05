@@ -6,17 +6,31 @@ import { Textarea, type TextareaProps } from "../Textarea"
 
 type Props = TextareaProps & {
   name: string
+  clasName?: string
 }
 
 export const TextAreaField: FC<Props> = ({ name, ...props }) => {
-  const { control } = useFormContext()
+  const {
+    control,
+    formState: { errors },
+  } = useFormContext()
 
   return (
-    <Controller
-      control={control}
-      name={name}
-      render={({ field }) => <Textarea {...field} {...props} />}
-    />
+    <div>
+      <Controller
+        control={control}
+        name={name}
+        render={({ field }) => (
+          <Textarea error={Boolean(errors[name])} {...field} {...props} />
+        )}
+      />
+
+      {errors[name] ? (
+        <p className="text-sm text-red-500">
+          {errors[name]?.message as string}
+        </p>
+      ) : null}
+    </div>
   )
 }
 

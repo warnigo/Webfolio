@@ -1,9 +1,9 @@
 import { type FC, type ReactElement } from "react"
 
-import { cn } from "@/shared/lib"
-import { type MotionViewportType } from "@/shared/types"
-
 import { motion } from "framer-motion"
+
+import { cn } from "@shared/lib"
+import { type MotionViewportType } from "@shared/types"
 
 type Props = {
   title: string

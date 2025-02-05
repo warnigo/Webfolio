@@ -1,5 +1,5 @@
-import { cn } from "@/shared/lib"
-import { type FCRequiredChildren } from "@/shared/types"
+import { cn } from "@shared/lib"
+import { type FCRequiredChildren } from "@shared/types"
 
 import { Label, type LabelProps } from "../Label"
 

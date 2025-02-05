@@ -1,6 +1,6 @@
 import { type FC } from "react"
 
-import { Experience } from "@/views/experience"
+import { Experience } from "@views/experience"
 
 export { metadata } from "@views/experience"
 

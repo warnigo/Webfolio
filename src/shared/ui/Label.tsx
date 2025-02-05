@@ -1,7 +1,7 @@
 import { type LabelHTMLAttributes } from "react"
 
-import { cn } from "@/shared/lib"
-import { type FCRequiredChildren } from "@/shared/types"
+import { cn } from "@shared/lib"
+import { type FCRequiredChildren } from "@shared/types"
 
 export type LabelProps = LabelHTMLAttributes<HTMLLabelElement> & {
   required?: boolean

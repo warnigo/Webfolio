@@ -53,6 +53,9 @@
     "message": "Message",
     "yourMessage": "Your message to me",
     "sendMessage": "Send Your Message",
-    "send": "Send"
+    "send": "Send",
+    "nameMinLength": "Name must be at least 2 characters.",
+    "contactMinLength": "Contact must be at least 2 characters.",
+    "messageMinLength": "Message must be at least 2 characters."
   }
 }

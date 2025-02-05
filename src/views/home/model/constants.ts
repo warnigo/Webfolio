@@ -1,5 +1,5 @@
-import { Contact } from "@/widgets/Contact"
-import { Introduction } from "@/widgets/Introduction"
+import { Contact } from "@widgets/Contact"
+import { Introduction } from "@widgets/Introduction"
 
 /**
  * The `homeSections` object maps section names to their respective components.

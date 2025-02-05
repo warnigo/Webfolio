@@ -1,9 +1,9 @@
 import { type FormEvent, type FormHTMLAttributes } from "react"
 
-import { cn } from "@/shared/lib"
-import { type FCRequiredChildren } from "@/shared/types"
-
 import { FormProvider, type UseFormReturn } from "react-hook-form"
+
+import { cn } from "@shared/lib"
+import { type FCRequiredChildren } from "@shared/types"
 
 type FormProps = FormHTMLAttributes<HTMLFormElement> & {
   onSubmit?: (e: FormEvent<HTMLFormElement>) => void

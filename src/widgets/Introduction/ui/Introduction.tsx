@@ -4,11 +4,10 @@ import { type FC } from "react"
 import Image from "next/image"
 import { useTranslations } from "next-intl"
 
-import { MotionButton } from "@/shared/motion-ui"
-
 import { AnimatePresence, motion } from "framer-motion"
 import { User, UtilityPole } from "lucide-react"
 
+import { MotionButton } from "@shared/motion-ui"
 import { Separator } from "@shared/ui"
 
 import { fadeInRight, fadeInUp, floatingShapes, handWave } from "../lib/motion"

@@ -3,9 +3,9 @@
 import { type FC } from "react"
 import { useTranslations } from "next-intl"
 
-import { Badge } from "@/shared/ui"
-
 import { motion } from "framer-motion"
+
+import { Badge } from "@shared/ui"
 
 const Experience: FC = () => {
   const t = useTranslations()

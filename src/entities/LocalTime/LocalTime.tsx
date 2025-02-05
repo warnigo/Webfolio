@@ -3,14 +3,13 @@
 import { type FC, useEffect, useState } from "react"
 import { useNow, useTranslations } from "next-intl"
 
-import { cn } from "@/shared/lib"
-
 import dayjs from "dayjs"
 import timezone from "dayjs/plugin/timezone"
 import utc from "dayjs/plugin/utc"
 import { AnimatePresence } from "framer-motion"
 
 import { DEFAULT_TIMEZONE } from "@shared/i18n/request"
+import { cn } from "@shared/lib"
 import { RotateNumber } from "@shared/motion-ui"
 import { Badge } from "@shared/ui"
 

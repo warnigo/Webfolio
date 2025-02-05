@@ -9,12 +9,11 @@ import {
   useState,
 } from "react"
 
-import { buttonVariants } from "@/shared/ui"
-
 import { type VariantProps } from "class-variance-authority"
 import { motion } from "framer-motion"
 
 import { cn } from "@shared/lib"
+import { buttonVariants } from "@shared/ui"
 
 interface MotionConfig {
   duration?: number
@@ -49,6 +48,7 @@ interface MotionButtonProps
   iconPosition?: "left" | "right"
   hoverText?: string
   hoverIcon?: ReactElement
+  hoverIconPosition?: "left" | "right"
   motionConfig?: MotionConfig
 }
 
@@ -62,6 +62,7 @@ export const MotionButton: FC<MotionButtonProps> = ({
   iconPosition = "left",
   hoverText,
   hoverIcon,
+  hoverIconPosition = "right",
   children,
   disabled,
   motionConfig,
@@ -140,6 +141,32 @@ export const MotionButton: FC<MotionButtonProps> = ({
     return contentElements
   }
 
+  const renderHoverContent = (): ReactNode => {
+    const hoverElements = []
+
+    if (hoverIcon && hoverIconPosition === "left") {
+      hoverElements.push(
+        <span key="hover-icon-left" className="mr-2">
+          {hoverIcon}
+        </span>,
+      )
+    }
+
+    if (hoverText) {
+      hoverElements.push(<span key="hover-text">{hoverText}</span>)
+    }
+
+    if (hoverIcon && hoverIconPosition === "right") {
+      hoverElements.push(
+        <span key="hover-icon-right" className="ml-2">
+          {hoverIcon}
+        </span>,
+      )
+    }
+
+    return hoverElements
+  }
+
   return (
     <ButtonComponent
       disabled={disabled}
@@ -187,16 +214,15 @@ export const MotionButton: FC<MotionButtonProps> = ({
           {renderContent()}
         </motion.span>
 
-        {shouldAnimate && (hoverText || hoverIcon) ? (
+        {shouldAnimate ? (
           <motion.span
             animate={isHovered ? "hover" : "initial"}
-            className="absolute inset-0 z-10 flex items-center justify-center gap-2"
+            className="absolute inset-0 z-10 flex items-center justify-center"
             initial="initial"
             style={{ backfaceVisibility: "hidden" }}
             variants={getIconVariants}
           >
-            {hoverIcon}
-            {hoverText}
+            {renderHoverContent()}
           </motion.span>
         ) : null}
       </motion.div>

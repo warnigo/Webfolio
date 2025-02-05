@@ -9,13 +9,12 @@ import { Milestone, MoveUpRight } from "lucide-react"
 import { ENV, socialMedia } from "@shared/config"
 import { Link, usePathname } from "@shared/i18n"
 import { cn } from "@shared/lib"
-import { MotionButton } from "@shared/motion-ui"
+import { linkHoverVariants, MotionButton } from "@shared/motion-ui"
 import { Icon, Logo, Separator } from "@shared/ui"
 
 import {
   containerVariants,
   footerVariants,
-  linkHoverVariants,
   textHoverVariants,
 } from "../lib/motion"
 import { footerMenu } from "../model/constants"
