@@ -68,7 +68,7 @@ export const WidgetHeader: FC<Props> = ({
     )}
   >
     <motion.h4
-      className="flex items-center gap-2 font-mono text-4xl font-black"
+      className="flex items-center gap-2 font-mono text-2xl font-black md:text-4xl"
       variants={variants.title}
     >
       <motion.span aria-hidden="true" variants={variants.icon}>

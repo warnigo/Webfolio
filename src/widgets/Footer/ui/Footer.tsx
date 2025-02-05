@@ -67,17 +67,16 @@ const Footer: FC = () => {
             </ul>
           </nav>
 
-          <Link href="/blog">
-            <MotionButton
-              aria-label={t("Common.visitBlog")}
-              className="group min-h-10"
-              hoverIcon={<Milestone />}
-              hoverText={t("Common.go")}
-              variant="outline"
-            >
-              {t("Common.visitBlog")}
-            </MotionButton>
-          </Link>
+          <MotionButton
+            disabled
+            aria-label={t("Common.visitBlog")}
+            className="group min-h-10"
+            hoverIcon={<Milestone />}
+            hoverText={t("Common.go")}
+            variant="outline"
+          >
+            {t("Common.visitBlog")}
+          </MotionButton>
         </motion.div>
 
         <Separator />
