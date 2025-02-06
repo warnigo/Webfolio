@@ -1,13 +1,16 @@
-import { type FC, type PropsWithChildren } from "react"
-
 import { Layout } from "@app/layouts"
 import { NextIntlProvider } from "@app/providers"
+import { type FCRequiredChildren } from "@shared/types"
 
-interface Props extends PropsWithChildren {
+type Props = {
   params: Promise<{ locale: string }>
 }
 
-const LocaleLayout: FC<Props> = async ({ children, params }) => {
+// LocaleLayout component for handling localization
+const LocaleLayout: FCRequiredChildren<Props> = async ({
+  children,
+  params,
+}) => {
   const { locale } = await params
 
   return (
@@ -16,4 +19,6 @@ const LocaleLayout: FC<Props> = async ({ children, params }) => {
     </NextIntlProvider>
   )
 }
+
+LocaleLayout.displayName = "LocaleLayout"
 export default LocaleLayout

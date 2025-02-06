@@ -1,10 +1,10 @@
 import { type FC } from "react"
-import { type Metadata } from "next"
 
-import { Resume, resumePageMetadata } from "@/views/resume"
+import { Resume } from "@views/resume"
 
-export const metadata: Metadata = resumePageMetadata
+export { metadata } from "@views/resume"
 
 const ResumePage: FC = () => <Resume />
 
+ResumePage.displayName = "ResumePage"
 export default ResumePage

@@ -1,15 +1,18 @@
-import { type FC, type PropsWithChildren } from "react"
 import { notFound } from "next/navigation"
 import { NextIntlClientProvider } from "next-intl"
 import { getMessages } from "next-intl/server"
 
 import { type Locales, routing } from "@shared/i18n"
+import { type FCRequiredChildren } from "@shared/types"
 
-type Props = PropsWithChildren & {
+type Props = {
   locale: string
 }
 
-export const NextIntlProvider: FC<Props> = async ({ children, locale }) => {
+export const NextIntlProvider: FCRequiredChildren<Props> = async ({
+  children,
+  locale,
+}) => {
   const messages = await getMessages()
 
   if (!routing.locales.includes(locale as Locales)) {
@@ -22,5 +25,3 @@ export const NextIntlProvider: FC<Props> = async ({ children, locale }) => {
     </NextIntlClientProvider>
   )
 }
-
-NextIntlProvider.displayName = "NextIntlProvider"

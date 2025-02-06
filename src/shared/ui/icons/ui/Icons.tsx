@@ -1,7 +1,7 @@
 import { type FC } from "react"
 
-import { cn } from "@/shared/lib/utils"
-import { iconPaths } from "@/shared/ui/icons/model/paths"
+import { cn } from "@shared/lib/utils"
+import { iconPaths } from "@shared/ui/icons/model/paths"
 
 import { dimensions } from "../model/dimensions"
 import { type IconProps } from "../model/types"

@@ -5,7 +5,15 @@ const withNextIntl = createNextIntlPlugin("./src/shared/i18n/request.ts")
 
 /** @type {import('next').NextConfig} */
 const nextConfig: NextConfig = {
-  /* config options here */
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "media.licdn.com",
+        pathname: "/dms/image/**",
+      },
+    ],
+  },
 }
 
 export default withNextIntl(nextConfig)

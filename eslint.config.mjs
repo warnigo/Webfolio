@@ -55,7 +55,6 @@ const eslintConfig = [
       "plugin:jsx-a11y/recommended",
       "plugin:import/recommended",
       "plugin:react/recommended",
-      "plugin:import/recommended",
       "plugin:import/typescript",
       "plugin:jsx-a11y/strict",
       "plugin:promise/recommended",
@@ -269,7 +268,7 @@ const eslintConfig = [
           objectLiteralTypeAssertions: "never",
         },
       ],
-      "@typescript-eslint/no-misused-promises": "error",
+      "@typescript-eslint/no-misused-promises": "off", // error
       "@typescript-eslint/ban-ts-comment": [
         "error",
         {
@@ -291,6 +290,7 @@ const eslintConfig = [
       "@typescript-eslint/no-unsafe-return": "off",
       "@typescript-eslint/no-unsafe-member-access": "off",
       "@typescript-eslint/no-unsafe-argument": "off",
+      "@typescript-eslint/no-explicit-any": "off",
 
       // Whitespaces and newlines
       "no-trailing-spaces": "error",
@@ -306,10 +306,17 @@ const eslintConfig = [
             ["^@/"],
             ["^@?\\w"],
             ["^~/"],
+            [
+              "^@app/*",
+              "^@shared/*",
+              "^@views/*",
+              "^@helpers/*",
+              "^@entities/*",
+              "^@widgets/*",
+            ],
             ["^\\.\\.(?!/?$)", "^\\.\\./?$"],
             ["^\\./(?=.*/)(?!/?$)", "^\\.(?!/?$)", "^\\./?$"],
             ["^.+\\.s?css$"],
-            ["^@/types", "^@shared/types"],
             ["^\\u0000"],
           ],
         },

@@ -1,8 +1,8 @@
 import { type FC, type HTMLAttributes } from "react"
 
-import { cn } from "@/shared/lib"
-
 import { cva, type VariantProps } from "class-variance-authority"
+
+import { cn } from "@shared/lib"
 
 const separatorVariants = cva(
   "shrink-0 bg-border transition-colors duration-200",

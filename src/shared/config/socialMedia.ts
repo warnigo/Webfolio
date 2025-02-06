@@ -1,4 +1,4 @@
-import { iconPaths } from "@/shared/ui"
+import { iconPaths } from "@shared/ui"
 
 import { ENV } from "./env"
 

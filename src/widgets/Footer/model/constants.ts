@@ -1,4 +1,4 @@
-import { menuItems, ROUTES } from "@/shared/config"
+import { menuItems, ROUTES } from "@shared/config"
 
 export const footerMenu = [
   ...menuItems,

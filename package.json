@@ -22,6 +22,7 @@
   },
   "dependencies": {
     "@eslint/js": "^9.17.0",
+    "@hookform/resolvers": "^3.10.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "dayjs": "^1.11.13",
@@ -32,8 +33,10 @@
     "next-intl": "^3.26.3",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "react-hook-form": "^7.54.2",
     "tailwind-merge": "^2.6.0",
-    "tailwindcss-animate": "^1.0.7"
+    "tailwindcss-animate": "^1.0.7",
+    "zod": "^3.24.1"
   },
   "devDependencies": {
     "@eslint/compat": "^1.2.4",

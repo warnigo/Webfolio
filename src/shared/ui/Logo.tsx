@@ -1,9 +1,9 @@
 import { type FC } from "react"
 import { useTranslations } from "next-intl"
 
-import { ROUTES } from "@/shared/config"
-import { Link } from "@/shared/i18n"
-import { cn } from "@/shared/lib"
+import { ROUTES } from "@shared/config"
+import { Link } from "@shared/i18n"
+import { cn } from "@shared/lib"
 
 type Props = {
   className?: string

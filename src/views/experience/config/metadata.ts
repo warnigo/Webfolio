@@ -1,6 +1,6 @@
 import { type Metadata } from "next"
 
-export const experiencePageMetadata: Metadata = {
+export const metadata: Metadata = {
   title: "",
   description: "",
 }

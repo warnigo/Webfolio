@@ -9,7 +9,8 @@
     "contactMe": "Men bilan bog‘laning",
     "aboutMe": "Men haqimda",
     "close": "Yopish",
-    "socialMedia": "Ijtimoiy tarmoqlar"
+    "socialMedia": "Ijtimoiy tarmoqlar",
+    "viewAll": "Barchasini ko‘rish"
   },
   "Layout": {
     "home": "Bosh sahifa",
@@ -23,7 +24,9 @@
     "notAvailableWork": "Ishga tayyor emasman",
     "localeTime": "Mahalliy vaqt",
     "sourceCode": "Manba kodi",
-    "openMenu": "Menyuni ochish"
+    "openMenu": "Menyuni ochish",
+    "changeLanguage": "Tilni o‘zgartirish",
+    "footerNavigation": "Pastki qism navigatsiyasi"
   },
   "BetaBanner": {
     "title": "Sayt hozir beta-versiyada. Barcha imkoniyatlar to‘liq ishlamasligi mumkin.",
@@ -38,5 +41,30 @@
   },
   "Resume": {
     "resumeDownload": "Rezyumeni yuklab olish"
+  },
+  "Contact": {
+    "letsWorkTogether": "Keling, birga ishlaymiz",
+    "letsWorkTogetherDescription": "Ijodkor va ishonchli mutaxassis qidiryapsizmi? Keling, g‘oyalaringizni hayotga tatbiq etamiz. Keyingi loyihangizni boshlash uchun bugun bog‘laning!",
+    "name": "Ism",
+    "yourName": "Ismingiz",
+    "yourContact": "Sizning kontaktingiz",
+    "howContactYou": "Siz bilan qanday bog‘lansam bo‘ladi?",
+    "budget": "Byudjet",
+    "yourBudget": "Sizning byudjetingiz",
+    "message": "Xabar",
+    "yourMessage": "Menga yubormoqchi bo‘lgan xabaringiz",
+    "sendMessage": "Xabaringizni yuboring",
+    "send": "Yuborish",
+    "nameMinLength": "Ism kamida 2 ta belgidan iborat bo‘lishi kerak.",
+    "contactMinLength": "Kontakt kamida 2 ta belgidan iborat bo‘lishi kerak.",
+    "messageMinLength": "Xabar kamida 2 ta belgidan iborat bo‘lishi kerak."
+  },
+  "Experience": {
+    "title": "Mening tajribam",
+    "description": "+3 yillik tajribaga ega frontend dasturchi sifatida zamonaviy texnologiyalar yordamida foydalanuvchilarga qulay va interaktiv veb-ilovalar yarataman.",
+    "hybrid": "Gibrid",
+    "on-side": "Ofisda",
+    "remote": "Masofaviy",
+    "skills": "Ko‘nikmalar"
   }
 }

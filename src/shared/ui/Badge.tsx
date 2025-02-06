@@ -1,7 +1,8 @@
 import { type FC, type HTMLAttributes } from "react"
 
-import { cn } from "@shared/lib"
 import { cva, type VariantProps } from "class-variance-authority"
+
+import { cn } from "@shared/lib"
 
 const badgeVariants = cva(
   "inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2",
@@ -51,7 +52,7 @@ export const Badge: FC<BadgeProps> = ({
     {withDot ? (
       <span
         className={cn(
-          "mr-1 inline-block size-2 rounded-full",
+          "mr-1 inline-block size-2  rounded-full",
           dotColor,
           dotClassName,
         )}

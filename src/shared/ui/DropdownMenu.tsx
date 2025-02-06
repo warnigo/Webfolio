@@ -2,9 +2,9 @@
 
 import { type FC, type ReactNode, useEffect, useRef, useState } from "react"
 
-import { cn } from "@/shared/lib"
-
 import { AnimatePresence, motion } from "framer-motion"
+
+import { cn } from "@shared/lib"
 
 type DropdownItemType = {
   label: string
