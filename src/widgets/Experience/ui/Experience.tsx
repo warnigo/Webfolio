@@ -44,7 +44,7 @@ const Experience: FC = () => {
             whileInView="visible"
           >
             <Card className="grid gap-3 rounded-xl border-border bg-secondary/40 p-6 sm:rounded-2xl md:gap-4 lg:gap-5 lg:rounded-3xl">
-              <CardHeader className="flex flex-row justify-between p-0">
+              <CardHeader className="flex flex-row flex-wrap justify-between p-0">
                 <div className="flex items-center gap-4">
                   <Avatar
                     alt={item.company}
@@ -102,7 +102,7 @@ const Experience: FC = () => {
                   {item.skills.map((skill, skillIndex) => (
                     <Badge
                       key={skillIndex}
-                      className="select-none rounded-full border-border font-mono text-sm"
+                      className="select-none rounded-full border-border font-mono text-xs sm:text-sm"
                       variant="outline"
                     >
                       {skill}
