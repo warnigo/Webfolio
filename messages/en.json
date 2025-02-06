@@ -9,7 +9,8 @@
     "contactMe": "Contact Me",
     "aboutMe": "About Me",
     "close": "Close",
-    "socialMedia": "Social Media"
+    "socialMedia": "Social Media",
+    "viewAll": "View all"
   },
   "Layout": {
     "home": "Home",
@@ -57,5 +58,13 @@
     "nameMinLength": "Name must be at least 2 characters.",
     "contactMinLength": "Contact must be at least 2 characters.",
     "messageMinLength": "Message must be at least 2 characters."
+  },
+  "Experience": {
+    "title": "My Experience",
+    "description": "As a frontend developer with +3 years of experience, I create user-friendly and interactive web applications using modern technologies.",
+    "hybrid": "Hybrid",
+    "on-side": "On-side",
+    "remote": "Remote",
+    "skills": "Skills"
   }
 }

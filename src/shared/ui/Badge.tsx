@@ -52,7 +52,7 @@ export const Badge: FC<BadgeProps> = ({
     {withDot ? (
       <span
         className={cn(
-          "mr-1 inline-block size-2 rounded-full",
+          "mr-1 inline-block size-2  rounded-full",
           dotColor,
           dotClassName,
         )}

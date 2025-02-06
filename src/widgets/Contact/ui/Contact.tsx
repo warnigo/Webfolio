@@ -53,7 +53,7 @@ const Contact: FC = () => {
   }
 
   return (
-    <section className="grid w-full gap-4 py-5">
+    <section className="grid w-full gap-4 py-10">
       <WidgetHeader
         description={t("letsWorkTogetherDescription")}
         icon={<Construction size={30} strokeWidth={2.5} />}

@@ -10,7 +10,7 @@ export const CardFooter: FCRequiredChildren<Props> = ({
   children,
   ...props
 }) => (
-  <div className={cn("flex items-center p-6 pt-0", className)} {...props}>
+  <div className={cn("p-6 pt-0", className)} {...props}>
     {children}
   </div>
 )
