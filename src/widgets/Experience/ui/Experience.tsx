@@ -120,7 +120,7 @@ const Experience: FC = () => {
         href={ROUTES.experience}
       >
         <MotionButton
-          className="rounded-xl"
+          className="h-10 rounded-xl"
           hoverIcon={<ChevronRight />}
           variant="outline"
         >
