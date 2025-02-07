@@ -1,13 +1,13 @@
 "use client"
 
 import { type FC } from "react"
-import Link from "next/link"
 import { useTranslations } from "next-intl"
 
 import { motion } from "framer-motion"
 import { BriefcaseBusiness, ChevronRight } from "lucide-react"
 
 import { ROUTES } from "@shared/config"
+import { Link } from "@shared/i18n"
 import { MotionButton, motionViewport } from "@shared/motion-ui"
 import {
   Avatar,
