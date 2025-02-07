@@ -1,7 +1,8 @@
-import { type ExprienceType } from "./types"
+import { type ExprienceType } from "@shared/ui"
 
 export const allExperience: ExprienceType[] = [
   {
+    id: 1,
     posiontion: "Middle Frontend engineer",
     description:
       "As the most essential and integral developer in the team, I consistently took the lead on critical projects, ensuring that all frontend development efforts aligned with the company's strategic goals.",
@@ -25,6 +26,7 @@ export const allExperience: ExprienceType[] = [
     ],
   },
   {
+    id: 2,
     posiontion: "Backend developer",
     description:
       "I have experience in designing and developing Capture The Flag (CTF) challenges using Golang, C++, and C languages. These CTFs were built to simulate real-world hacking scenarios and provide a platform for cybersecurity training",
@@ -40,6 +42,29 @@ export const allExperience: ExprienceType[] = [
     skills: ["Golang", "Docker", "AWS", "Domain Drived Design(DDD)", "C++"],
   },
   {
+    id: 3,
+    posiontion: "Middle Frontend developer",
+    description:
+      "Played a pivotal role in developing and enhancing internal learning systems for students, including ERP, Edfix, Robit, and others",
+    compayLogo:
+      "https://media.licdn.com/dms/image/v2/C4E0BAQF6dkB4tZocPg/company-logo_200_200/company-logo_200_200/0/1654174156256/najottalim_logo?e=1746662400&v=beta&t=qJjKypOoFEz6r1_kiWBWVL38esP6tUS04aaAULC73b8",
+    company: "Najot talim (Abutech)",
+    end_date: "08.2024",
+    start_date: "01.2024",
+    employment_type: "Full time",
+    localtion: "Tashkent, Uzbekistan",
+    website: "https://najottalim.uz",
+    location_type: "on-side",
+    skills: [
+      "React",
+      "Next.js",
+      "Sass / Scss",
+      "Mui / Antd",
+      "Feature Slided Design (FSD)",
+    ],
+  },
+  {
+    id: 4,
     posiontion: "Middle Frontend developer",
     description:
       "Played a pivotal role in developing and enhancing internal learning systems for students, including ERP, Edfix, Robit, and others",

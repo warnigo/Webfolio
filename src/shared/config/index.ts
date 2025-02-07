@@ -1,3 +1,4 @@
+export { allExperience } from "./allExperience"
 export { ENV } from "./env"
 export { menuItems } from "./menuItems"
 export { ROUTES } from "./routes"

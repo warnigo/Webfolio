@@ -84,6 +84,7 @@ const Header: FC = () => {
                 aria-label={t("Layout.changeLanguage")}
                 className="h-full min-h-10 rounded-xl font-mono text-sm"
                 hoverIcon={<Languages />}
+                hoverIconPosition="center"
                 variant="outline"
               >
                 {languages.find((l) => l.code === locale)?.name}
