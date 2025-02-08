@@ -66,5 +66,9 @@
     "on-side": "Ofisda",
     "remote": "Masofaviy",
     "skills": "Ko‘nikmalar"
+  },
+  "Essence": {
+    "title": "Men kimman?",
+    "description": "Maqsadim — kod orqali vizion yaratish. Har bir piksel, har bir qator kod — bu tajriba, samaradorlik va innovatsiya uyg‘unligi."
   }
 }

@@ -22,7 +22,8 @@ export const allExperience: ExprienceType[] = [
       "Jest",
       "Feature Slided Design (FSD)",
       "Front End Engineering Design (FEED)",
-      "Unit testing & E2E Testing",
+      "Unit testing",
+      "E2E Testing",
     ],
   },
   {
@@ -58,8 +59,9 @@ export const allExperience: ExprienceType[] = [
     skills: [
       "React",
       "Next.js",
-      "Sass / Scss",
-      "Mui / Antd",
+      "Sass",
+      "Mui",
+      "Antd",
       "Feature Slided Design (FSD)",
     ],
   },
