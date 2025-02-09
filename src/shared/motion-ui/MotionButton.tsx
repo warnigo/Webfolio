@@ -48,7 +48,7 @@ interface MotionButtonProps
   iconPosition?: "left" | "right"
   hoverText?: string
   hoverIcon?: ReactElement
-  hoverIconPosition?: "left" | "right"
+  hoverIconPosition?: "center" | "left" | "right"
   motionConfig?: MotionConfig
 }
 
@@ -62,7 +62,7 @@ export const MotionButton: FC<MotionButtonProps> = ({
   iconPosition = "left",
   hoverText,
   hoverIcon,
-  hoverIconPosition = "right",
+  hoverIconPosition = "left",
   children,
   disabled,
   motionConfig,
@@ -143,6 +143,17 @@ export const MotionButton: FC<MotionButtonProps> = ({
 
   const renderHoverContent = (): ReactNode => {
     const hoverElements = []
+
+    if (hoverIconPosition === "center" && hoverIcon) {
+      return (
+        <span
+          key="hover-icon-center"
+          className="flex w-full items-center justify-center"
+        >
+          {hoverIcon}
+        </span>
+      )
+    }
 
     if (hoverIcon && hoverIconPosition === "left") {
       hoverElements.push(

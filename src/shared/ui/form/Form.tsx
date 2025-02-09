@@ -1,3 +1,5 @@
+"use client"
+
 import { type FormEvent, type FormHTMLAttributes } from "react"
 
 import { FormProvider, type UseFormReturn } from "react-hook-form"
