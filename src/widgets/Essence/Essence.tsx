@@ -15,6 +15,8 @@ const Essence: FC = () => {
         icon={<Candy size={30} strokeWidth={2.5} />}
         title={t("title")}
       />
+
+      <div />
     </section>
   )
 }

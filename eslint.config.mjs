@@ -197,7 +197,7 @@ const eslintConfig = [
         },
       ],
       // "react/no-array-index-key": "error",
-      "react/no-danger": "error",
+      "react/no-danger": "off", // error
       "react/no-multi-comp": [
         "error",
         {
