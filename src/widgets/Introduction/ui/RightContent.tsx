@@ -12,7 +12,7 @@ export const RightContent: FC = () => {
   const t = useTranslations()
 
   return (
-    <div className="relative flex flex-1 items-center justify-center p-8">
+    <div className="relative flex flex-1 items-center justify-center py-8">
       <AnimatePresence>
         <motion.div
           animate={{ opacity: 1, transition: { delay: 0.3, duration: 0.8 } }}
