@@ -5,4 +5,5 @@ export const ENV = {
   x_account: process.env.NEXT_PUBLIC_X_ACCOUNT ?? "",
   devfolio_url: process.env.NEXT_PUBLIC_DEVFOLIO_URL ?? "",
   buymeacoffee_url: process.env.NEXT_PUBLIC_BUYMEACOFFEE_URL ?? "",
+  instagram_account: process.env.NEXT_PUBLIC_INSTAGRAM_ACCOUNT ?? "",
 }
