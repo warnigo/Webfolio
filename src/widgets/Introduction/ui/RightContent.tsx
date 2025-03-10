@@ -85,7 +85,7 @@ export const RightContent: FC = () => {
           >
             <div className="flex select-none gap-4 font-mono text-highlight">
               <div className="text-center">
-                <p className="text-2xl font-bold">5+</p>
+                <p className="text-2xl font-bold">3+</p>
                 <p className="text-xs text-highlight/60">
                   {t("Introduction.yearsExp")}
                 </p>
