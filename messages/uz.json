@@ -70,5 +70,9 @@
   "Essence": {
     "title": "Men kimman?",
     "description": "Maqsadim — kod orqali vizion yaratish. Har bir piksel, har bir qator kod — bu tajriba, samaradorlik va innovatsiya uyg‘unligi."
+  },
+  "Stacks": {
+    "title": "Mening texnologik stackim",
+    "description": "Men samaradorlik va uzluksizlikni ta'minlash uchun zamonaviy texnologik stack yordamida yuqori samaradorlik va kengaytiriluvchan ilovalar yarataman."
   }
 }

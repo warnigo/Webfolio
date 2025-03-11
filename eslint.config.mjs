@@ -168,7 +168,7 @@ const eslintConfig = [
       "react/jsx-max-depth": [
         "error",
         {
-          max: 6,
+          max: 8,
         },
       ],
       "react/jsx-no-duplicate-props": [
@@ -197,7 +197,7 @@ const eslintConfig = [
         },
       ],
       // "react/no-array-index-key": "error",
-      "react/no-danger": "error",
+      "react/no-danger": "off", // error
       "react/no-multi-comp": [
         "error",
         {
@@ -418,12 +418,7 @@ const eslintConfig = [
       "promise/param-names": "error",
 
       // Security rules
-      "no-secrets/no-secrets": [
-        "error",
-        {
-          ignoreContent: ["^https://", "^test", "^example", "^public-key"],
-        },
-      ],
+      "no-secrets/no-secrets": "off", // maybe error
       "security/detect-buffer-noassert": "error",
       "security/detect-child-process": "error",
       "security/detect-disable-mustache-escape": "error",

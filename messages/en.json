@@ -8,6 +8,7 @@
     "thanksForVisit": "Thanks for visiting!",
     "contactMe": "Contact Me",
     "aboutMe": "About Me",
+    "about": "About",
     "close": "Close",
     "socialMedia": "Social Media",
     "viewAll": "View all"
@@ -33,11 +34,15 @@
     "close": "Close banner"
   },
   "Introduction": {
-    "hello": "Hello I'm",
+    "hello": "Hello, This is",
     "shortAboutMe": "Half of my life has been spent talking to machines, shaping the digital world through code. I’m passionate about designing robust architectures and solving intricate problems, from scaling systems to building powerful algorithms. I love taking on complex projects that push boundaries, creating seamless solutions that evolve and adapt.",
     "occupation": "Frontend Engineer - Software Engineer",
     "sectionAriaLabel": "Intro section",
-    "profileImageAlt": "My Photo"
+    "profileImageAlt": "My Photo",
+    "followMe": "Follow me",
+    "aboutMeMore": "About Me More",
+    "yearsExp": "Years Exp",
+    "projects": "Projects"
   },
   "Resume": {
     "resumeDownload": "Resume Download"
