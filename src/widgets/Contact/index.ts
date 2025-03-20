@@ -1,1 +1,1 @@
-export { default as Contact } from "./ui/Contact"
+export { default as Contact } from "./Contact"

@@ -12,7 +12,16 @@ export const RightContent: FC = () => {
   const t = useTranslations()
 
   return (
-    <div className="relative flex flex-1 items-center justify-center py-8">
+    <motion.div
+      className="relative flex flex-1 items-center justify-center py-8"
+      initial={{ opacity: 0, y: -20 }}
+      viewport={{ once: true, amount: 0.5 }}
+      whileInView={{
+        opacity: 1,
+        y: 0,
+        transition: { duration: 0.5, ease: "easeInOut" },
+      }}
+    >
       <AnimatePresence>
         <motion.div
           animate={{ opacity: 1, transition: { delay: 0.3, duration: 0.8 } }}
@@ -80,8 +89,8 @@ export const RightContent: FC = () => {
               y: 0,
               transition: { delay: 1.6, duration: 0.6 },
             }}
-            className="absolute -bottom-6 -right-6 z-10 rounded-lg border border-white/10 bg-white/5
-                        p-4 shadow-lg backdrop-blur-xl"
+            className="absolute bottom-0 z-10 flex w-full items-center justify-center rounded-lg border border-white/10 bg-white/5 p-4 shadow-lg backdrop-blur-xl
+                        md:-bottom-6 md:-right-6 md:w-auto"
           >
             <div className="flex select-none gap-4 font-mono text-highlight">
               <div className="text-center">
@@ -101,7 +110,7 @@ export const RightContent: FC = () => {
           </motion.div>
         </motion.div>
       </AnimatePresence>
-    </div>
+    </motion.div>
   )
 }
 

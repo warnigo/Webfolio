@@ -27,10 +27,10 @@ import {
   formContainerVariants,
   formItemVariants,
   formSubmitVariants,
-} from "../lib/motion"
-import { contactSocialMedia } from "../model/constants"
-import { useFormSchema } from "../model/schemas"
-import { type FormValues } from "../model/types"
+} from "./lib/motion"
+import { contactSocialMedia } from "./model/constants"
+import { useFormSchema } from "./model/schemas"
+import { type FormValues } from "./model/types"
 
 const Contact: FC = () => {
   const t = useTranslations("Contact")

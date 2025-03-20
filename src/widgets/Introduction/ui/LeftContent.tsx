@@ -10,6 +10,7 @@ import { SocialMedia } from "@widgets/Introduction/ui/SocialMedia"
 
 export const LeftContent: FC = () => {
   const t = useTranslations()
+
   return (
     <div className="flex flex-1 flex-col justify-center py-12 lg:py-0">
       <motion.div
