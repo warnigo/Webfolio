@@ -1,25 +1,23 @@
 import { type FC } from "react"
 import { useTranslations } from "next-intl"
 
-import { Candy } from "lucide-react"
+import { BugPlay } from "lucide-react"
 
 import { WidgetHeader } from "@shared/components"
 
-const Essence: FC = () => {
-  const t = useTranslations("Essence")
+const Expertise: FC = () => {
+  const t = useTranslations("Expertise")
 
   return (
     <section className="py-10">
       <WidgetHeader
         description={t("description")}
-        icon={<Candy size={30} strokeWidth={2.5} />}
+        icon={<BugPlay size={30} strokeWidth={2.5} />}
         title={t("title")}
       />
-
-      <div />
     </section>
   )
 }
 
-Essence.displayName = "Essence"
-export default Essence
+Expertise.displayName = "Expertise"
+export default Expertise

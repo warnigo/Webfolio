@@ -7,6 +7,7 @@ import { motion } from "framer-motion"
 import { Construction, MoveUpRight, SendHorizontal } from "lucide-react"
 import { useForm } from "react-hook-form"
 
+import { WidgetHeader } from "@shared/components"
 import { MotionButton, motionViewport } from "@shared/motion-ui"
 import {
   Card,
@@ -19,7 +20,6 @@ import {
   Separator,
   TextAreaField,
   TextField,
-  WidgetHeader,
 } from "@shared/ui"
 
 import {

@@ -76,8 +76,8 @@
     "title": "Who am I?",
     "description": "My goal is to create a vision through code. Every pixel, every line of code is a harmony of experience, efficiency, and innovation."
   },
-  "Stacks": {
-    "title": "My Stack",
-    "description": "I build scalable and high-performance applications using a modern tech stack, ensuring efficiency and seamless integration."
+  "Expertise": {
+    "title": "Skills & Expertise",
+    "description": "Mastering modern technologies to build scalable, high-performance applications. From elegant frontend interfaces to robust backend logic, I craft solutions that are efficient, seamless, and future-proof."
   }
 }

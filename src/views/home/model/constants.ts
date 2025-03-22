@@ -1,8 +1,8 @@
 import { Contact } from "@widgets/Contact"
 import { Essence } from "@widgets/Essence"
 import { Experience } from "@widgets/Experience"
+import { Expertise } from "@widgets/Expertise"
 import { Introduction } from "@widgets/Introduction"
-import { Stacks } from "@widgets/Stacks"
 
 /**
  * The `homeSections` object maps section names to their respective components.
@@ -10,8 +10,8 @@ import { Stacks } from "@widgets/Stacks"
  */
 export const homeSections = {
   Introduction: Introduction,
+  Expertise: Expertise,
   Essence: Essence,
   Experience: Experience,
-  Stacks: Stacks,
   Contact: Contact,
 }

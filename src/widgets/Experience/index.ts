@@ -1,1 +1,1 @@
-export { default as Experience } from "./ui/Experience"
+export { default as Experience } from "./Experience"

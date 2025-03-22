@@ -6,8 +6,9 @@ import { useTranslations } from "next-intl"
 import { motion } from "framer-motion"
 import { BriefcaseBusiness } from "lucide-react"
 
+import { JobCard, WidgetHeader } from "@shared/components"
 import { allExperience } from "@shared/config"
-import { Badge, JobCard, WidgetHeader } from "@shared/ui"
+import { Badge } from "@shared/ui"
 
 const Experience: FC = () => {
   const t = useTranslations()

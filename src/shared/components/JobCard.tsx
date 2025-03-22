@@ -16,23 +16,23 @@ import {
   Separator,
 } from "@shared/ui"
 
-export type ExprienceType = {
+export type ExperienceType = {
   id: number
-  posiontion: string
+  position: string
   company: string
   website: string
   start_date: string
   end_date: string
   description: string
-  compayLogo: string
-  localtion: string
+  companyLogo: string
+  location: string
   employment_type: string
   location_type: "hybrid" | "on-side" | "remote"
   skills: string[]
 }
 
 type Props = {
-  data: ExprienceType
+  data: ExperienceType
 }
 
 const cardContainer: Variants = {
@@ -63,7 +63,7 @@ export const JobCard: FC<Props> = ({ data }) => {
               className="rounded-xl"
               fallback={data.company.slice(0)}
               size="lg"
-              src={data.compayLogo}
+              src={data.companyLogo}
             />
 
             <div>
@@ -97,7 +97,7 @@ export const JobCard: FC<Props> = ({ data }) => {
         <CardContent className="grid gap-2 rounded-2xl border border-border bg-background px-6 py-4">
           <div>
             <h6 className="font-mono text-base font-bold md:text-lg">
-              {data.posiontion}
+              {data.position}
             </h6>
 
             <p className="line-clamp-5 text-sm text-highlight md:text-base">
@@ -126,3 +126,5 @@ export const JobCard: FC<Props> = ({ data }) => {
     </motion.div>
   )
 }
+
+JobCard.displayName = "JobCard"

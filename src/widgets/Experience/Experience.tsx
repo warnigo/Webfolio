@@ -5,10 +5,10 @@ import { useTranslations } from "next-intl"
 
 import { BriefcaseBusiness, ChevronRight } from "lucide-react"
 
+import { JobCard, WidgetHeader } from "@shared/components"
 import { allExperience, ROUTES } from "@shared/config"
 import { Link } from "@shared/i18n"
 import { MotionButton } from "@shared/motion-ui"
-import { JobCard, WidgetHeader } from "@shared/ui"
 
 const Experience: FC = () => {
   const t = useTranslations()
