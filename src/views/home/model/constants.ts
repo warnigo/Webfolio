@@ -10,8 +10,8 @@ import { Introduction } from "@widgets/Introduction"
  */
 export const homeSections = {
   Introduction: Introduction,
+  Experience: Experience,
   Expertise: Expertise,
   Essence: Essence,
-  Experience: Experience,
   Contact: Contact,
 }

@@ -14,7 +14,7 @@ const Experience: FC = () => {
   const t = useTranslations()
 
   return (
-    <section className="flex w-full flex-col gap-5 py-10">
+    <section className="flex w-full flex-col gap-3 py-10 md:gap-5">
       <WidgetHeader
         description={t("Experience.description")}
         icon={<BriefcaseBusiness size={30} strokeWidth={2.5} />}
