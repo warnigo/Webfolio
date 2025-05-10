@@ -29,7 +29,7 @@ type TiltCardProps = {
 export const TiltCard: FC<TiltCardProps> = ({ category, index }) => {
   const cardRef = useRef<HTMLDivElement | null>(null)
   const inView = useInView(cardRef, {
-    once: false,
+    once: true,
     margin: "-100px 0px",
     amount: 0.3,
   })

@@ -1,6 +1,5 @@
 import { Contact } from "@widgets/Contact"
 import { Experience } from "@widgets/Experience"
-import { Expertise } from "@widgets/Expertise"
 import { Introduction } from "@widgets/Introduction"
 
 /**
@@ -10,7 +9,7 @@ import { Introduction } from "@widgets/Introduction"
 export const homeSections = {
   Introduction: Introduction,
   Experience: Experience,
-  Expertise: Expertise,
+  // Expertise: Expertise,
   // Essence: Essence,
   Contact: Contact,
 }
