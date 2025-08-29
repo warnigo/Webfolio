@@ -5,7 +5,6 @@ import { useTranslations } from "next-intl"
 
 import { AnimatePresence, motion } from "framer-motion"
 
-// Variants for the animation (initial, animate, exit states)
 const bannerVariants = {
   initial: { y: -100 },
   animate: { y: 0 },
@@ -13,7 +12,6 @@ const bannerVariants = {
   transition: { type: "spring", stiffness: 300, damping: 30 },
 }
 
-// BetaBanner component
 const BetaBanner: FC = () => {
   const t = useTranslations("BetaBanner")
 
